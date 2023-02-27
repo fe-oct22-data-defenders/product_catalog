@@ -1,0 +1,116 @@
+@import url('../../styles/utils/mixins');
+@import url('../../styles/utils/vars');
+
+.footer {
+  padding: 32px;
+  box-shadow: 0 -1px 0 $elements;
+  background-color: $black;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1130px;
+
+    @include onPhone {
+      display: block;
+    }
+  }
+
+  &__logo {
+    margin-top: 14px;
+
+    @include onPhone {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+
+    @include onPhone {
+      flex-direction: column;
+      margin-bottom: 32px;
+    }
+
+    @include onTablet {
+      width: 350px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      @include onPhone {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      @include onTablet {
+        &:not(:last-child) {
+          margin-right: 107px;
+        }
+      }
+
+      @include onDesktop {
+        &:not(:last-child) {
+          margin-right: 107px;
+        }
+      }
+    }
+
+    &__link {
+      font-size: 12px;
+      line-height: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $white;
+      transition-property: color;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    margin-right: 16px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    font-style: normal;
+    color: $secondary;
+  }
+
+  &__button {
+    padding: 16px;
+    background-position: center;
+    background-image: url('../../images/icons/back-button.svg');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-color: $surface2;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    border-radius: 0%;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}
