@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
 <<<<<<< HEAD
@@ -33,5 +34,15 @@ export const App: FC = () => {
       </div>
       <Footer />
     </>
+=======
+import './App.scss';
+import { Footer } from './components/Footer/Footer';
+
+export const App: React.FC = () => {
+  return (
+    <div className="App">
+      <Footer />
+    </div>
+>>>>>>> b4731b4 (initial footer)
   );
 };
