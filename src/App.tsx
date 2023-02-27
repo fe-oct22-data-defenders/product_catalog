@@ -1,9 +1,7 @@
-import React from 'react';
-
 import {
   Navigate, Route, Routes,
 } from 'react-router-dom';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Navbar } from './components/Header/Navbar/Navbar';
 import { Logo } from './components/Logo/Logo';
 
@@ -58,6 +56,7 @@ export const App: FC = () => {
               element={<h1>Page not found</h1>}
             />
           </Routes>
+
         </div>
       </div>
     </>
