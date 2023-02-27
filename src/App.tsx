@@ -2,8 +2,8 @@ import {
   Navigate, Route, Routes,
 } from 'react-router-dom';
 import { FC } from 'react';
-import { Navbar } from './modules/HomePage/components/Heder/Navbar/Navbar';
-import { Logo } from './modules/HomePage/components/Heder/Logo/Logo';
+import { Navbar } from './components/Heder/Navbar/Navbar';
+import { Logo } from './components/Logo/Logo';
 
 export const App: FC = () => {
   return (

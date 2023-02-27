@@ -13,14 +13,10 @@ export const Navbar: FC = memo(() => {
           <PageNavLink to="phones" text="Phones" />
           <PageNavLink to="tablets" text="Tablets" />
           <PageNavLink to="accessories" text="Accessories" />
-        </div>
-        <div>
           <Link to="favorites"><img src="" alt="Heard" /></Link>
-          <Link to="card"><img src="" alt="Іhopping cart" /></Link>
+          <Link to="card"><img src="" alt="Shopping cart" /></Link>
         </div>
       </div>
     </nav>
   );
 });
-
-export {};
