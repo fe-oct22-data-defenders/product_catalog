@@ -2,7 +2,7 @@ import {
   Navigate, Route, Routes,
 } from 'react-router-dom';
 import { FC } from 'react';
-import { Navbar } from './components/Heder/Navbar/Navbar';
+import { Navbar } from './components/Header/Navbar/Navbar';
 import { Logo } from './components/Logo/Logo';
 
 export const App: FC = () => {
