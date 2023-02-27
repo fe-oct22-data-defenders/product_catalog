@@ -58,7 +58,8 @@
     "stylelint-config-standard": "^30.0.1"
   },
   "lint-staged": {
-    "*.js": "npm run lint",
-    "*.css": "stylelint --fix"
+    "*.ts": "npm run lint",
+    "*.tsx": "npm run lint",
+    "*.scss": "stylelint --fix"
   }
 }
