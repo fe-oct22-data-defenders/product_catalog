@@ -18,12 +18,12 @@ export const App: FC = () => {
             <Route
               path="phones"
               element={
-                <h1>Phones</h1>
+                <h1>Phones(Catalog)</h1>
               }
             >
               <Route
                 path=":phoneId"
-                element={<h1>Phone1</h1>}
+                element={<h1>Item card</h1>}
               />
             </Route>
             <Route
@@ -36,6 +36,18 @@ export const App: FC = () => {
               path="accessories"
               element={
                 <h1>Accessories</h1>
+              }
+            />
+            <Route
+              path="favorites"
+              element={
+                <h1>Favorites</h1>
+              }
+            />
+            <Route
+              path="card"
+              element={
+                <h1>CardPage</h1>
               }
             />
 

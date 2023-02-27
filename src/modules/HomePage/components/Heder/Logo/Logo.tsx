@@ -1,9 +1,8 @@
 import { FC, memo } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Logo: FC = memo(() => {
   return (
-    <img src="" alt="" />
+    <Link to="/"><img src="" alt="Shop Logo" /></Link>
   );
 });
-
-export {};
