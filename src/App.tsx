@@ -26,6 +26,7 @@ export const App: FC = () => {
           </Routes>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

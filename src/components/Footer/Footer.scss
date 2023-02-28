@@ -1,5 +1,5 @@
-@import url('../../styles/utils/mixins');
-@import url('../../styles/utils/vars');
+@import '../../styles/utils/_mixins';
+@import '../../styles/utils/vars';
 
 .footer {
   padding: 32px;
@@ -11,28 +11,15 @@
     justify-content: space-between;
     margin: auto;
     max-width: 1130px;
-
-    @include onPhone {
-      display: block;
-    }
   }
 
   &__logo {
     margin-top: 14px;
-
-    @include onPhone {
-      margin-bottom: 32px;
-    }
   }
 
   &__nav {
     display: flex;
     justify-content: space-between;
-
-    @include onPhone {
-      flex-direction: column;
-      margin-bottom: 32px;
-    }
 
     @include onTablet {
       width: 350px;
@@ -41,12 +28,7 @@
     &__item {
       display: flex;
       align-items: center;
-
-      @include onPhone {
-        &:not(:last-child) {
-          margin-bottom: 16px;
-        }
-      }
+      
 
       @include onTablet {
         &:not(:last-child) {
@@ -96,7 +78,7 @@
   &__button {
     padding: 16px;
     background-position: center;
-    background-image: url('../../images/icons/back-button.svg');
+    background-image: url('../../public/icons/back-button.svg');
     background-repeat: no-repeat;
     background-size: 16px;
     background-color: $surface2;

@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/control-has-associated-label */
+import React from 'react';
+import { Logo } from '../Logo/Logo';
 import './Footer.scss';
 
 const backToTop = () => {
@@ -13,9 +15,9 @@ export const Footer: React.FC = () => (
   <footer className="footer">
     <div className="footer__container">
       <div className="footer__logo">
-        {/* <a href="/" className="footer__logo__link">
+        <a href="/" className="footer__logo__link">
           <Logo />
-        </a> */}
+        </a>
       </div>
 
       <ul className="footer__nav">
@@ -29,6 +31,7 @@ export const Footer: React.FC = () => (
             github
           </a>
         </li>
+
         <li className="footer__nav__item">
           <a
             className="footer__nav__link"
@@ -39,6 +42,7 @@ export const Footer: React.FC = () => (
             contacts
           </a>
         </li>
+
         <li className="footer__nav__item">
           <a
             className="footer__nav__link"
