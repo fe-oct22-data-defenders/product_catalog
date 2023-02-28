@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
 import { Header } from './components/Header';
+import { ProductCart } from './components/ProductCart/ProductCart';
 
 export const App: FC = () => {
   return (
@@ -21,6 +22,7 @@ export const App: FC = () => {
 
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
+          <ProductCart />
         </div>
       </div>
     </>
