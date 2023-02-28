@@ -8,8 +8,10 @@ import { Logo } from './components/Logo/Logo';
 export const App: FC = () => {
   return (
     <>
-      <Logo />
-      <Navbar />
+      <header className="header">
+        <Logo />
+        <Navbar />
+      </header>
       <div className="section">
         <div className="container">
           <Routes>
