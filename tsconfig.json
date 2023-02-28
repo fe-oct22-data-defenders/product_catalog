@@ -3,7 +3,8 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "extends": "@mate-academy/students-ts-config"
 }

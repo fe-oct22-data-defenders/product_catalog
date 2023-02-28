@@ -1,0 +1,17 @@
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/vars";
+
+
+.not-found__title{
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include onTablet {
+    font-size: 48px;
+  }
+
+  @include onDesktop{
+    font-size: 48px;
+  }
+}
