@@ -2,24 +2,15 @@ name: Deployment
 on:
   push:
     branches:
-      - master
-
+      - main
 jobs:
-  build-test-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set-up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
-      - run: npm install
-      - run: npm run build
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_SECRET }}
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.SECRET_TOKEN }}
+        publish_dir: ./build
