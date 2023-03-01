@@ -1,5 +1,7 @@
+@import './vars';
+
 body {
   font-family: Mont-Regular, sans-serif;
   scroll-behavior: smooth;
+  background-color: $black;
 }
-

@@ -14,17 +14,17 @@ const navLinks: NavLink[] = [
   },
   {
     id: 2,
-    adress: '/',
+    adress: 'phones',
     text: 'Phones',
   },
   {
     id: 3,
-    adress: '/',
+    adress: 'tablets',
     text: 'Tablets',
   },
   {
     id: 4,
-    adress: '/',
+    adress: 'accessories',
     text: 'Accessories',
   },
 ];
@@ -32,33 +32,28 @@ const navLinks: NavLink[] = [
 export const Navbar: FC = memo(() => {
   return (
     <>
-      <nav
-        className="navbar"
-      >
-        <ul className="menu-list">
-          {navLinks.map(navLink => (
-            <li key={navLink.id}>
-              <PageNavLink
-                to={navLink.adress}
-                text={navLink.text}
-              />
+      <nav className="navbar">
+        <ul className="navbar__menu-list">
+          {navLinks.map((navLink) => (
+            <li key={navLink.id} className="navbar__menu-list-li">
+              <PageNavLink to={navLink.adress} text={navLink.text} />
             </li>
           ))}
         </ul>
       </nav>
-      <ul className="shopcard-control">
+      <ul className="navbar__shopcard-control">
         <li>
-          <Link to="favorites">
+          <Link className="navbar__shopcard-control-link" to="favorites">
             <img src={heartLikeIcon} alt="favorites" />
           </Link>
         </li>
         <li>
-          <Link to="card">
+          <Link className="navbar__shopcard-control-link" to="card">
             <img src={shoppingBagIcon} alt="card" />
           </Link>
         </li>
       </ul>
-      <div className="menu-btn">
+      <div className="navbar__menu-btn">
         <img src={menuIcon} alt="menu" />
       </div>
     </>
