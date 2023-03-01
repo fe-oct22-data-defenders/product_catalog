@@ -80,7 +80,7 @@
       color: $white;
 
       &::after {
-        content: "";
+        content: " ";
         background-color: $white;
         display: block;
         position: absolute;
