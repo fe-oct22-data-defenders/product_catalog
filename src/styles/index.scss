@@ -1,2 +1,8 @@
+@import './utils/vars';
+@import './utils/normalize';
 @import './utils/mixins';
 @import './grid';
+@import './utils/reset';
+@import './utils/fonts';
+@import '../components/Header/Navbar/Navbar';
+

@@ -1,0 +1,95 @@
+.header {
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 16px;
+  border-bottom: 1px solid $surface2;
+
+  @include onDesktop {
+    padding-left: 24px;
+  }
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  margin-right: 32px;
+
+  &__shopcard-control {
+    display: none;
+    position: relative;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__shopcard-control-link {
+    position: relative;
+    padding: 16px 15px 11px;
+    border-left: 1px solid $surface2;
+
+    @include onDesktop {
+      padding: 23px 23px 20px;
+    }
+  }
+
+  &__menu-list {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-basis: 430px;
+    }
+
+    justify-content: space-between;
+  }
+
+  &__menu-list-link {
+    display: block;
+    color: $secondary;
+    font-family: Mont-Bold, sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__menu-list-link-container {
+    padding: 16px 0;
+
+    @include onDesktop {
+      padding: 26px 0;
+    }
+  }
+
+  &__menu-list-link--active {
+    &::after {
+      content: '';
+      background-color: $white;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__menu-btn {
+    display: block;
+    padding: 16px 16px 13px;
+    border-left: 1px solid $surface2;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
