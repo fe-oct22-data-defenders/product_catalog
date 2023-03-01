@@ -1,12 +1,13 @@
 .button-accent {
-  height: 40px;
   background-color: $accent;
   text-align: center;
+  display: flex;
 
   &__addToCard {
-    display: block;
+    display: flex;
     color: white;
-    width: 180px;
+    background-color: $accent;
+    height: 40px;
     font-family: Mont-Regular, sans-serif;
     font-style: normal;
     font-weight: 700;
