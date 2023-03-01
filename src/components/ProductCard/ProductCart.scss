@@ -1,0 +1,100 @@
+iframe {
+  display: none;
+}
+
+.phone {
+  border: solid 1px black;
+  padding: 32px;
+  background: $surface1;
+  max-width: $max-card-width;
+
+  &__image {
+    display: block;
+    width: 208px;
+    height: 196px;
+  }
+
+  &__name {
+    padding-bottom: 8px;
+    font-family: Mont-Regular, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    &--link {
+      font-family: Mont-Regular, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    &--fullPrice {
+      margin-right: 8px;
+      font-family: Mont-Regular, sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+      color: $white;
+    }
+
+    &--startPrice {
+      font-family: Mont-Regular, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+      text-decoration-line: line-through;
+      color: $secondary;
+    }
+  }
+
+  &__decoration--line {
+    margin-bottom: 16px;
+    border: 1px solid $elements
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+
+    &--name {
+      font-family: Mont-Regular, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      color: $secondary;
+    }
+
+    &--property {
+      font-family: Mont-Bold, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      align-content: center;
+      color: $white;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+
+    &--like {
+      width: 40px;
+      height: 40px;
+      background-color: $surface2;
+    }
+  }
+}

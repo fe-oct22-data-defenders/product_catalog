@@ -1,9 +1,13 @@
 @import './utils/vars';
 @import './utils/normalize';
 @import './utils/mixins';
+@import './utils/vars';
+@import './utils/normalize';
+@import './utils/reset';
 @import './grid';
 @import './utils/reset';
 @import './utils/fonts';
 @import '../components/Header/Navbar/Navbar';
 
-@import '../components/ProductCart/ProductCart'
+@import '../components/ProductCard/ProductCart';
+@import '../components/ButtonAccent/ButtonAccent'
