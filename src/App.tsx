@@ -24,6 +24,8 @@ export const App: FC = () => {
 
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
+
+          {/* just for test */}
           <ProductCardList phones={phonesFromServer} />
         </div>
       </div>
