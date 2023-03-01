@@ -1,10 +1,17 @@
 .header {
   background-color: $black;
   display: flex;
+  height: 64px;
   align-items: center;
+  overflow: hidden;
   padding-left: 16px;
+
   @include onDesktop {
     padding-left: 24px;
+  }
+
+  @include onTablet {
+    height: 48px;
   }
 }
 
@@ -22,13 +29,15 @@
 .shopcard-control {
   display: none;
   position: relative;
+
   @include onTablet {
     display: flex;
   }
 
   a {
-    padding: 16px 15px 13px;
+    padding: 16px 15px 11px;
     border-left: 1px solid $secondary;
+
     @include onDesktop {
       padding: 23px 23px 20px;
     }
@@ -37,37 +46,48 @@
 
 .menu-list {
   display: none;
+
   @include onTablet {
     display: flex;
   }
+
   flex-basis: 480px;
+
   @include onDesktop {
     flex-basis: 580px;
   }
+
   justify-content: space-between;
 
   a {
     display: inline-block;
     padding: 16px 4px;
+
     @include onDesktop {
       padding: 23px 4px;
     }
+
     color: $secondary;
-    font-weight: 700;
+    font-family: Mont-Bold, sans-serif;
+    font-weight: 800;
+    font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
     transition: 0.3s;
     position: relative;
+
     &:hover {
       color: $white;
+
       &::after {
-        content: " ";
+        content: "";
         background-color: $white;
         display: block;
         position: absolute;
         width: 100%;
         height: 3px;
         bottom: 0;
+        left: 0;
       }
     }
   }
@@ -76,12 +96,14 @@
 .logo {
   padding: 8px 0;
   margin-right: 32px;
+
   @include onDesktop {
     margin-right: 44px;
   }
 
-  svg {
+  img {
     width: 64px;
+
     @include onDesktop {
       width: 80px;
     }
@@ -93,6 +115,7 @@
   display: block;
   padding: 16px 16px 13px;
   border-left: 1px solid $secondary;
+
   @include onTablet {
     display: none;
   }
