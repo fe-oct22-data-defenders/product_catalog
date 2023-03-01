@@ -1,12 +1,13 @@
+import cn from 'classnames';
 import React, { FC, memo } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { PageNavLink } from './PageNavLink/PageNavLink';
 import heartLikeIcon from '../../../public/header-icons/heart.svg';
 import shoppingBagIcon from '../../../public/header-icons/shopcart.svg';
 import menuIcon from '../../../public/header-icons/menu.svg';
-import { NavLink } from '../../../types/NavLink';
+import { NavLinkType } from '../../../types/NavLinkType';
 
-const navLinks: NavLink[] = [
+const navLinks: NavLinkType[] = [
   {
     id: 1,
     adress: '/',
@@ -43,14 +44,28 @@ export const Navbar: FC = memo(() => {
       </nav>
       <ul className="navbar__shopcard-control">
         <li>
-          <Link className="navbar__shopcard-control-link" to="favorites">
+          <NavLink
+            className={({ isActive }) => (
+              cn('navbar__shopcard-control-link', {
+                'navbar__menu-list-link--active': isActive,
+              })
+            )}
+            to="favorites"
+          >
             <img src={heartLikeIcon} alt="favorites" />
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className="navbar__shopcard-control-link" to="card">
+          <NavLink
+            className={({ isActive }) => (
+              cn('navbar__shopcard-control-link', {
+                'navbar__menu-list-link--active': isActive,
+              })
+            )}
+            to="card"
+          >
             <img src={shoppingBagIcon} alt="card" />
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <div className="navbar__menu-btn">
