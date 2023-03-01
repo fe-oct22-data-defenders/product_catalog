@@ -3,18 +3,12 @@ import React, { FC } from 'react';
 type Props = {
   classNameButton: string;
   text: string;
-  link: string;
 };
 
-export const ButtonAccent: FC<Props> = ({ classNameButton, text, link }) => {
+export const ButtonAccent: FC<Props> = ({ classNameButton, text }) => {
   return (
-    <div className="button-accent">
-      <a
-        className={`button-accent__${classNameButton}`}
-        href={link}
-      >
-        {text}
-      </a>
-    </div>
+    <button type="button" className={classNameButton}>
+      {text}
+    </button>
   );
 };

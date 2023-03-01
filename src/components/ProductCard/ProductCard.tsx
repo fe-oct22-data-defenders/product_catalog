@@ -61,11 +61,9 @@ export const ProductCard: FC<Props> = ({
 
       <div className="phone__buttons">
         <ButtonAccent
-          classNameButton="addToCard"
+          classNameButton="button-accent"
           text="Add to card"
-          link="/"
         />
-
         <div className="phone__buttons--like" />
       </div>
 

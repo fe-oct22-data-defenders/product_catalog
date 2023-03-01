@@ -1,17 +1,33 @@
 .button-accent {
+  width: 100%;
+  color: white;
   background-color: $accent;
-  text-align: center;
-  display: flex;
+  height: 40px;
+  font-family: Mont-Regular, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 40px;
+  border-color: transparent;
+  max-width: 100px;
 
-  &__addToCard {
-    display: flex;
-    color: white;
-    background-color: $accent;
-    height: 40px;
-    font-family: Mont-Regular, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 40px
+  @include onTablet {
+    max-width: 125px;
   }
+
+  @include onDesktop {
+    max-width: 160px;
+  }
+
+  &:hover {
+    background-color: $accentHover;
+  }
+
+  @include onDesktop {
+    &:focus {
+      background-color: $surface2;
+    }
+  }
+
+
 }
