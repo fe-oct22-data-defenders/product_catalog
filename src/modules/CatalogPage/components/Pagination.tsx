@@ -2,6 +2,8 @@ import cn from 'classnames';
 import React from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import './Pagination.scss';
+import { getNumbers } from './helpers/getNumbers';
+import { searchByPage } from './helpers/searchByPage';
 
 type Props = {
   total: number,
@@ -17,40 +19,8 @@ export const Pagination: React.FC<Props> = React.memo(({
   onPageChange,
 }) => {
   const [searchParams] = useSearchParams();
-  const getPageNumber = (start: number, end: number) => {
-    const numbers = [];
 
-    for (let i = start; i <= end; i += 1) {
-      numbers.push(i);
-    }
-
-    return numbers;
-  };
-
-  type SearchParams = {
-    [key: string]: string | null,
-  };
-
-  function searchByPage(
-    currentParams: URLSearchParams,
-    params: SearchParams,
-  ): string {
-    const newParams = new URLSearchParams(
-      currentParams.toString(),
-    );
-
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newParams.delete(key);
-      } else {
-        newParams.set(key, value);
-      }
-    });
-
-    return newParams.toString();
-  }
-
-  const numberOfPages = getPageNumber(1, Math.ceil(total / perPage));
+  const numberOfPages = getNumbers(1, Math.ceil(total / perPage));
   const lastPage = Math.ceil(total / perPage);
 
   return (
