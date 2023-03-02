@@ -11,7 +11,6 @@
     align-items: center;
 		list-style: none;
 		text-decoration: none;
-		margin-right: 8px;
 		width: 32px;
 		height: 32px;
 		background-color: $surface2;
@@ -20,13 +19,10 @@
 		&__disabled {
 			background-color: $black;
 			color: $icons;
+			pointer-events: none;
+			border: 1px solid $elements;
 		}
-		&:first-child {
-			margin-right: 16px;
-		}
-		&:last-child {
-			margin-left: 16px;
-		}
+
 		&:hover {
 			background-color: $icons;
 		}
@@ -38,22 +34,31 @@
     align-items: center;
 		list-style: none;
 		text-decoration: none;
-		margin-right: 8px;
 		width: 32px;
 		height: 32px;
 		color: $white;
 		background-color: $surface1;
-		&:last-child {
-			margin-right: 0;
+		&__active {
+			background-color: $accent;
+			color: $white;
+		}
+
+		&:hover {
+			background-color: $icons;
 		}
 	}
 
-	&__active {
-		background-color: $accent;
-    color: $white;
+	li {
+		margin-right: 8px;
+		&:first-child{
+			margin-right: 16px;
+		}
+		&:last-child{
+			margin-left: 16px;
+			margin-right: 0;
+		}
+		&:nth-last-child(2) {
+			margin-right: 0;
+		}
 	}
-}
-
-li {
-	list-style: none;
 }

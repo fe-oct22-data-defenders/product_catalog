@@ -6,6 +6,7 @@ import { NotFoundPage } from './modules/NotFoundPage';
 import phonesFromServer from './public/api/phones.json';
 // eslint-disable-next-line max-len
 import { ProductCardList } from './components/ProductCardList.tsx/ProductCardList';
+import { HomePage } from './modules/HomePage/components/HomePage';
 
 export const App: FC = () => {
   return (
@@ -14,7 +15,7 @@ export const App: FC = () => {
       <div className="section">
         <div className="container">
           <Routes>
-            <Route path="/" element={<h1>Home page</h1>} />
+            <Route path="/" element={<HomePage />} />
             <Route path="home" element={<Navigate to="/" replace />} />
             <Route path="phones" element={<CatalogPage />}>
               <Route path=":phoneId" element={<h1>Item card</h1>} />

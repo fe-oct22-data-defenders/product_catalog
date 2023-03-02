@@ -1,8 +1,14 @@
-import React, { memo, useCallback, useState } from 'react';
-import { Catalog } from '../../../components/Catalog/Catalog';
+import React, {
+  memo,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
+// eslint-disable-next-line max-len
+import { ProductCatalog } from '../../../components/ProductCatalog/ProductCatalog';
 import phonesFromServer from '../../../public/api/phones.json';
 import { Pagination } from './Pagination';
-// import './CatalogPage.module.scss';
+import './CatalogPage.scss';
 
 export const CatalogPage: React.FC = memo(() => {
   const startPage = 1;
@@ -19,31 +25,26 @@ export const CatalogPage: React.FC = memo(() => {
     ? page * select
     : countOfItems;
 
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  const isCardCountOdd = windowSize.current[0] >= 768
+    && windowSize.current[0] <= 1199;
   const visibleItems = phones.slice(startItems, endItems);
 
   const handlePageChange = useCallback((currentPage: number | string) => {
     if (typeof currentPage === 'number') {
       setPage(currentPage);
     }
-
-    // if (currentPage === 'prev') {
-    //   setPage(prev => prev - 1);
-    // }
-
-    // if (currentPage === 'next') {
-    //   setPage(prev => prev + 1);
-    // }
   }, []);
 
   return (
-    <div className="container">
-      <h1>Mobile phones</h1>
+    <section className="catalog-page">
+      <h1 className="catalog-page__title">Mobile phones</h1>
+      <p className="catalog-page__subtitle">{ `${countOfItems} models`}</p>
       <div className="catalog">
         <div>
           {/* <label>
             Sort by
             <select
-              data-cy="perPageSelector"
               id="perPageSelector"
               className="form-control"
               value={select}
@@ -59,27 +60,38 @@ export const CatalogPage: React.FC = memo(() => {
           </label> */}
         </div>
         <div>
-          <label>
+          <label className="catalog-page__label">
             Items on page
             <select
-              data-cy="perPageSelector"
               id="perPageSelector"
-              className="form-control"
+              className=""
               value={select}
               onChange={(event) => {
                 setSelect(Number(event.target.value));
                 setPage(1);
               }}
             >
-              <option value="4">4</option>
-              <option value="8">8</option>
-              <option value="16">16</option>
-              <option value="95">All</option>
+              {isCardCountOdd && (
+                <>
+                  <option value="3">3</option>
+                  <option value="6">6</option>
+                  <option value="12">12</option>
+                  <option value="95">All</option>
+                </>
+              )}
+              {!isCardCountOdd && (
+                <>
+                  <option value="4">4</option>
+                  <option value="8">8</option>
+                  <option value="16">16</option>
+                  <option value="95">All</option>
+                </>
+              )}
             </select>
           </label>
         </div>
 
-        <Catalog phones={visibleItems} />
+        <ProductCatalog phones={visibleItems} />
         <Pagination
           total={71}
           perPage={select}
@@ -87,6 +99,6 @@ export const CatalogPage: React.FC = memo(() => {
           onPageChange={handlePageChange}
         />
       </div>
-    </div>
+    </section>
   );
 });

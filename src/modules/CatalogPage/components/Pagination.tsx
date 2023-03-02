@@ -31,7 +31,7 @@ export const Pagination: React.FC<Props> = React.memo(({
     [key: string]: string | null,
   };
 
-  function searchBy(
+  function searchByPage(
     currentParams: URLSearchParams,
     params: SearchParams,
   ): string {
@@ -62,9 +62,8 @@ export const Pagination: React.FC<Props> = React.memo(({
             { pagination__button__disabled: currentPage === 1 },
           )}
           to={{
-            search: searchBy(searchParams, { page: `${currentPage - 1}` }),
+            search: searchByPage(searchParams, { page: `${currentPage - 1}` }),
           }}
-          aria-disabled={currentPage === 1}
           onClick={() => {
             if (currentPage !== 1) {
               onPageChange(currentPage - 1);
@@ -73,28 +72,18 @@ export const Pagination: React.FC<Props> = React.memo(({
         >
           {'<'}
         </Link>
-        {/* <button
-          type="button"
-          className="pagination__button"
-          aria-disabled={currentPage === 1}
-          disabled={currentPage === 1}
-          onClick={() => {
-            if (currentPage !== 1) {
-              onPageChange('prev');
-            }
-          }}
-        >
-          {'<'}
-        </button> */}
       </li>
       {numberOfPages.map(page => (
         <li
           key={page}
         >
           <Link
-            className="pagination__link"
+            className={cn(
+              'pagination__link',
+              { pagination__link__active: currentPage === page },
+            )}
             to={{
-              search: searchBy(searchParams, { page: `${page}` }),
+              search: searchByPage(searchParams, { page: `${page}` }),
             }}
             onClick={() => onPageChange(page)}
           >
@@ -109,9 +98,8 @@ export const Pagination: React.FC<Props> = React.memo(({
             { pagination__button__disabled: currentPage === lastPage },
           )}
           to={{
-            search: searchBy(searchParams, { page: `${currentPage + 1}` }),
+            search: searchByPage(searchParams, { page: `${currentPage + 1}` }),
           }}
-          aria-disabled={currentPage === lastPage}
           onClick={() => {
             if (currentPage !== lastPage) {
               onPageChange(currentPage + 1);
@@ -120,19 +108,6 @@ export const Pagination: React.FC<Props> = React.memo(({
         >
           {'>'}
         </Link>
-        {/* <button
-          type="button"
-          className="pagination__button"
-          aria-disabled={currentPage === lastPage}
-          disabled={currentPage === lastPage}
-          onClick={() => {
-            if (currentPage !== lastPage) {
-              onPageChange('next');
-            }
-          }}
-        >
-          {'>'}
-        </button> */}
       </li>
     </ul>
   );
