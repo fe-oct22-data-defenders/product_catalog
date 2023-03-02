@@ -1,6 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
 import { Header } from './components/Header';
+import phonesFromServer from './public/api/phones.json';
+// eslint-disable-next-line max-len
+import { ProductCardList } from './components/ProductCardList.tsx/ProductCardList';
 
 export const App: FC = () => {
   return (
@@ -21,6 +24,9 @@ export const App: FC = () => {
 
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
+
+          {/* just for test */}
+          <ProductCardList phones={phonesFromServer} />
         </div>
       </div>
     </>

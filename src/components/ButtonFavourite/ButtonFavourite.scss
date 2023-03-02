@@ -1,0 +1,11 @@
+.button-favourite {
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: $surface2;
+  background-image: url("../../public/header-icons/heart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $white;
+  border: 1px solid transparent;
+}
