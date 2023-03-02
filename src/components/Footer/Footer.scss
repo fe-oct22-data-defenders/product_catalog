@@ -1,4 +1,4 @@
-@import '../../styles/utils/_mixins';
+@import '../../styles/utils/mixins';
 @import '../../styles/utils/vars';
 @import '../../styles/utils/reset';
 
@@ -17,14 +17,14 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 32px 152px;
+      padding: 32px
     }
 
     @include onDesktop {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 32px 152px;
+      padding: 32px
     }
   }
 
@@ -55,6 +55,7 @@
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 0;
+      gap: 16px;
     }
 
     @include onDesktop {
@@ -66,11 +67,10 @@
     &__item {
       display: block;
       align-items: center;
-      
 
       @include onTablet {
         &:not(:last-child) {
-          margin-right: 100px;
+          margin-right: 10px;
         }
       }
 
