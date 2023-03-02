@@ -1,7 +1,6 @@
 import React, {
   memo,
   useCallback,
-  useRef,
   useState,
 } from 'react';
 // eslint-disable-next-line max-len
@@ -24,10 +23,6 @@ export const CatalogPage: React.FC = memo(() => {
   const endItems = page * select <= countOfItems
     ? page * select
     : countOfItems;
-
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const isCardCountOdd = windowSize.current[0] >= 768
-    && windowSize.current[0] <= 1199;
   const visibleItems = phones.slice(startItems, endItems);
 
   const handlePageChange = useCallback((currentPage: number | string) => {
@@ -39,7 +34,7 @@ export const CatalogPage: React.FC = memo(() => {
   return (
     <section className="catalog-page">
       <h1 className="catalog-page__title">Mobile phones</h1>
-      <p className="catalog-page__subtitle">{ `${countOfItems} models`}</p>
+      <p className="catalog-page__subtitle">{`${countOfItems} models`}</p>
       <div className="catalog">
         <div>
           {/* <label>
@@ -71,22 +66,12 @@ export const CatalogPage: React.FC = memo(() => {
                 setPage(1);
               }}
             >
-              {isCardCountOdd && (
-                <>
-                  <option value="3">3</option>
-                  <option value="6">6</option>
-                  <option value="12">12</option>
-                  <option value="95">All</option>
-                </>
-              )}
-              {!isCardCountOdd && (
-                <>
-                  <option value="4">4</option>
-                  <option value="8">8</option>
-                  <option value="16">16</option>
-                  <option value="95">All</option>
-                </>
-              )}
+              <>
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="95">All</option>
+              </>
             </select>
           </label>
         </div>
