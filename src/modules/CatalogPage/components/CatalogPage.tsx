@@ -1,6 +1,6 @@
 import React, {
   memo,
-  useCallback,
+  useMemo,
   useState,
 } from 'react';
 // eslint-disable-next-line max-len
@@ -8,28 +8,38 @@ import { ProductCatalog } from '../../../components/ProductCatalog/ProductCatalo
 import phonesFromServer from '../../../public/api/phones.json';
 import { Pagination } from './Pagination';
 import './CatalogPage.scss';
+import { Phone } from '../../../types/Phone';
 
 export const CatalogPage: React.FC = memo(() => {
   const startPage = 1;
   const startSelect = 16;
   const countOfItems = 71;
 
-  const [page, setPage] = useState(startPage);
-  const [select, setSelect] = useState(startSelect);
   const [phones] = useState(phonesFromServer);
+  const [currentPage, setCurrentPage] = useState(startPage);
+  const [itemsPerPage, setItemsPerPage] = useState(startSelect);
+  const [sortBy, setSortBy] = useState('Newest');
 
-  const startItems = page * select - select;
-
-  const endItems = page * select <= countOfItems
-    ? page * select
+  const startItems = currentPage * itemsPerPage - itemsPerPage;
+  const endItems = currentPage * itemsPerPage <= countOfItems
+    ? currentPage * itemsPerPage
     : countOfItems;
   const visibleItems = phones.slice(startItems, endItems);
 
-  const handlePageChange = useCallback((currentPage: number | string) => {
-    if (typeof currentPage === 'number') {
-      setPage(currentPage);
-    }
-  }, []);
+  const sortedItems = useMemo(() => {
+    return visibleItems.sort((item1: Phone, item2: Phone) => {
+      switch (sortBy) {
+        case 'Newest':
+          return item2.year - item2.year;
+        case 'Alphabetically':
+          return item1.phoneId.localeCompare(item2.phoneId);
+        case 'Cheapest':
+          return item1.price - item2.price;
+        default:
+          return 0;
+      }
+    });
+  }, [sortBy, phones, currentPage, itemsPerPage]);
 
   return (
     <section className="catalog-page">
@@ -37,33 +47,31 @@ export const CatalogPage: React.FC = memo(() => {
       <p className="catalog-page__subtitle">{`${countOfItems} models`}</p>
       <div className="catalog">
         <div>
-          {/* <label>
+          <label className="catalog-page__label">
             Sort by
             <select
-              id="perPageSelector"
-              className="form-control"
-              value={select}
+              className=""
+              value={sortBy}
               onChange={(event) => {
-                setSelect(Number(event.target.value));
-                setPage(1);
+                setSortBy(event.target.value);
+                setCurrentPage(1);
               }}
             >
               <option value="Newest">Newest</option>
               <option value="Alphabetically">Alphabetically</option>
               <option value="Cheapest">Cheapest</option>
             </select>
-          </label> */}
+          </label>
         </div>
         <div>
           <label className="catalog-page__label">
             Items on page
             <select
-              id="perPageSelector"
               className=""
-              value={select}
+              value={itemsPerPage}
               onChange={(event) => {
-                setSelect(Number(event.target.value));
-                setPage(1);
+                setItemsPerPage(Number(event.target.value));
+                setCurrentPage(1);
               }}
             >
               <>
@@ -76,12 +84,12 @@ export const CatalogPage: React.FC = memo(() => {
           </label>
         </div>
 
-        <ProductCatalog phones={visibleItems} />
+        <ProductCatalog phones={sortedItems} />
         <Pagination
           total={71}
-          perPage={select}
-          currentPage={page}
-          onPageChange={handlePageChange}
+          perPage={itemsPerPage}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
         />
       </div>
     </section>

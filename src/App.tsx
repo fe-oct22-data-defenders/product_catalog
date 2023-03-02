@@ -3,9 +3,6 @@ import React, { FC } from 'react';
 import { Header } from './components/Header/Header';
 import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
-import phonesFromServer from './public/api/phones.json';
-// eslint-disable-next-line max-len
-import { ProductCardList } from './components/ProductCardList.tsx/ProductCardList';
 import { HomePage } from './modules/HomePage/components/HomePage';
 
 export const App: FC = () => {
@@ -27,9 +24,6 @@ export const App: FC = () => {
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-
-          {/* just for test */}
-          <ProductCardList phones={phonesFromServer} />
         </div>
       </div>
     </>

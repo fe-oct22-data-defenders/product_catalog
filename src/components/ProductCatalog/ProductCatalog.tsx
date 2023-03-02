@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from '../Card/Card';
 import { Phone } from '../../types/Phone';
 import './ProductCatalog.scss';
+import { ProductCard } from '../ProductCard/ProductCard';
 
 type Props = {
   phones: Phone[];
@@ -9,6 +9,17 @@ type Props = {
 
 export const ProductCatalog: React.FC<Props> = ({ phones }) => (
   <div className="product-catalog">
-    {phones.map(phone => <Card text={phone.id} key={phone.id} />)}
+    {phones.map(phone => (
+      <ProductCard
+        key={phone.id}
+        name={phone.name}
+        image={phone.image}
+        fullPrice={phone.fullPrice}
+        price={phone.price}
+        screen={phone.screen}
+        capacity={phone.capacity}
+        ram={phone.ram}
+      />
+    ))}
   </div>
 );
