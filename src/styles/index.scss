@@ -1,2 +1,10 @@
+@import './utils/vars';
+@import './utils/normalize';
 @import './utils/mixins';
+@import './utils/reset';
+@import './utils/fonts';
 @import './grid';
+@import '../components/Header/Navbar/Navbar';
+@import '../components/ProductCard/ProductCart';
+@import '../components/ButtonAccent/ButtonAccent';
+@import '../components/ButtonFavourite/ButtonFavourite'

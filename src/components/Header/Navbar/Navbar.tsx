@@ -86,6 +86,6 @@ export const Navbar: FC = memo(() => {
           </NavLink>
         )}
       </div>
-    </nav>
+    </>
   );
 });
