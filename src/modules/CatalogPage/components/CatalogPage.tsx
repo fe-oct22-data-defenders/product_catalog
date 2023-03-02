@@ -46,11 +46,15 @@ export const CatalogPage: React.FC = memo(() => {
       <h1 className="catalog-page__title">Mobile phones</h1>
       <p className="catalog-page__subtitle">{`${countOfItems} models`}</p>
       <div className="catalog">
-        <div>
-          <label className="catalog-page__label">
-            Sort by
+        <div className="grid catalog-selectors">
+          <div className="
+              grid__item
+              grid__item--1-2
+              grid__item--tablet-1-4"
+          >
+            <div className="catalog-selectors-label">Sort by</div>
             <select
-              className=""
+              className="catalog-selectors-sort"
               value={sortBy}
               onChange={(event) => {
                 setSortBy(event.target.value);
@@ -61,13 +65,17 @@ export const CatalogPage: React.FC = memo(() => {
               <option value="Alphabetically">Alphabetically</option>
               <option value="Cheapest">Cheapest</option>
             </select>
-          </label>
-        </div>
-        <div>
-          <label className="catalog-page__label">
-            Items on page
+
+          </div>
+          <div className="
+            grid__item
+            grid__item--3-4
+            grid__item--tablet-5-7
+            grid__item--desktop-5-7"
+          >
+            <div className="catalog-selectors-label">Items on page</div>
             <select
-              className=""
+              className="catalog-selectors-perpage"
               value={itemsPerPage}
               onChange={(event) => {
                 setItemsPerPage(Number(event.target.value));
@@ -81,7 +89,7 @@ export const CatalogPage: React.FC = memo(() => {
                 <option value="95">All</option>
               </>
             </select>
-          </label>
+          </div>
         </div>
 
         <ProductCatalog phones={sortedItems} />

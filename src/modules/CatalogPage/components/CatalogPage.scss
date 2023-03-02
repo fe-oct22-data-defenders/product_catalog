@@ -1,5 +1,6 @@
 @import "../../../styles/utils/mixins";
 @import "../../../styles/utils/vars";
+@import "../../../styles/grid.scss";
 
 .catalog-page {
   &__title {
@@ -22,16 +23,66 @@
     line-height: 21px;
     color: $secondary;
     margin-top: 8px;
-  }
+    margin-bottom: 32px;
 
-  &__label {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    color: $secondary;
-    margin-top: 32px;
     @include onTablet {
-      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.catalog {
+  gap: 16px;
+  &-selectors {
+    margin-bottom: 24px;
+
+    &-label {
+      display: block;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $secondary;
+      margin-top: 32px;
+      margin-bottom: 4px;
+
+      @include onTablet {
+        margin-top: 40px;
+      }
+    }
+
+    &-sort {
+      width: 136px;
+      height: 40px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 21px;
+      background-color: $surface2;
+      color: $white;
+      border: none;
+      padding: 10px;
+
+      @include onWideTablet {
+        width: 187px;
+      }
+
+      @include onDesktop {
+        width: 176px;
+      }
+    }
+    &-perpage{
+      width: 136px;
+      height: 40px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 21px;
+      background-color: $surface2;
+      color: $white;
+      border: none;
+      padding: 10px;
+
+      @include onDesktop {
+        width: 128px;
+      }
     }
   }
 }
