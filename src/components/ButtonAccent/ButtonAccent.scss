@@ -9,15 +9,6 @@
   font-size: 14px;
   line-height: 40px;
   border-color: transparent;
-  max-width: 100px;
-
-  @include onTablet {
-    max-width: 125px;
-  }
-
-  @include onDesktop {
-    max-width: 160px;
-  }
 
   &:hover {
     background-color: $accentHover;

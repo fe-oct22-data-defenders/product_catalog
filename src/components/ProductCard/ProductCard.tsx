@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { ButtonAccent } from '../ButtonAccent/ButtonAccent';
+import { ButtonFavoutie } from '../ButtonFavourite/ButtonFavourite';
 
 type Props = {
   name: string,
@@ -39,8 +40,8 @@ export const ProductCard: FC<Props> = ({
         </h2>
 
         <div className="phone__price">
-          <h2 className="phone__price--fullPrice">{fullPrice}</h2>
-          <h2 className="phone__price--startPrice">{price}</h2>
+          <h2 className="phone__price--fullPrice">{`$${fullPrice}`}</h2>
+          <h2 className="phone__price--startPrice">{`$${price}`}</h2>
         </div>
       </section>
 
@@ -64,10 +65,8 @@ export const ProductCard: FC<Props> = ({
           classNameButton="button-accent"
           text="Add to card"
         />
-        <div className="phone__buttons--like" />
+        <ButtonFavoutie />
       </div>
-
     </article>
-
   );
 };

@@ -5,30 +5,21 @@ iframe {
 .phone {
   padding: 32px;
   background: $surface1;
-  max-width: $max-card-width-small;
+  height: $card-higth-mobile;
+  width: 100%;
 
   @include onTablet {
-    max-width: $max-card-width-middle;
-  }
-
-  @include onDesktop {
-    max-width: $max-card-width-lagre;
+    height: $card-hight-tablet;
   }
 
   &__image {
     display: block;
-    width: $card-img-width-small;
     padding-bottom: 24px;
+    height: $card-image-hight-mobile;
 
     @include onTablet {
-      max-width: $card-img-width-small;
+      height: $card-image-hight-tablet;
     }
-
-    @include onDesktop {
-      max-width: $card-img-width-small;
-    }
-
-    height: 196px;
   }
 
   &__name {
@@ -109,14 +100,16 @@ iframe {
     display: flex;
     justify-content: space-between;
 
-    &--like {
-      margin-left:8px;
-      width: 40px;
-      height: 40px;
-      background-color: $surface2;
-      background-image: url("");
-      color: $white;
-      border:1px solid transparent;
-    }
+    // &--like {
+    //   margin-left:8px;
+    //   width: 40px;
+    //   height: 40px;
+    //   background-color: $surface2;
+    //   background-image: url("../../public/header-icons/heart.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   color: $white;
+    //   border:1px solid transparent;
+    // }
   }
 }
