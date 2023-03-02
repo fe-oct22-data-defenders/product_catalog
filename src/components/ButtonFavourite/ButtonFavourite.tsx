@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-export const ButtonFavoutie: FC = () => {
+export const ButtonFavourite: FC = () => {
   return (
     <button
       type="button"
