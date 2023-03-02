@@ -1,0 +1,41 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Mont-Bold, sans-serif;
+  }
+
+  &__item {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    padding-bottom: 8px;
+    color: #89939A;
+    position: relative;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__link:hover,
+  .is-active {
+    color: white;
+  }
+
+  &__link:hover::after,
+  .is-active::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+  }
+}

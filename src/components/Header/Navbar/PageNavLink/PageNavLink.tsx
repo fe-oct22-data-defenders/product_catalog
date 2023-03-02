@@ -20,3 +20,14 @@ export const PageNavLink: FC<Props> = ({ to, text }) => (
     <div className="navbar__menu-list-link-container">{text}</div>
   </NavLink>
 );
+
+export const NavbarMenuLink: React.FC<Props> = ({ to, text }) => {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) => cn('menu__link', { 'is-active': isActive })}
+    >
+      {text}
+    </NavLink>
+  );
+};

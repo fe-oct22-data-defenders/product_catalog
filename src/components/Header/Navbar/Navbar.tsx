@@ -1,10 +1,11 @@
 import cn from 'classnames';
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { PageNavLink } from './PageNavLink/PageNavLink';
 import heartLikeIcon from '../../../public/header-icons/heart.svg';
 import shoppingBagIcon from '../../../public/header-icons/shopcart.svg';
 import menuIcon from '../../../public/header-icons/menu.svg';
+import closeMenu from '../../../public/header-icons/Union.svg';
 import { NavLinkType } from '../../../types/NavLinkType';
 
 const navLinks: NavLinkType[] = [
@@ -29,11 +30,6 @@ const navLinks: NavLinkType[] = [
     text: 'Accessories',
   },
 ];
-
-type Props = {
-  cartItemsNum: number,
-  favoriteItemsNum: number,
-};
 
 export const Navbar: FC<Props> = memo(({ cartItemsNum, favoriteItemsNum }) => {
   return (
