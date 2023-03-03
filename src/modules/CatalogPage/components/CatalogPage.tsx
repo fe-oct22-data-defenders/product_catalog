@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, {
   memo,
   useMemo,
@@ -52,20 +53,22 @@ export const CatalogPage: React.FC = memo(() => {
               grid__item--1-2
               grid__item--tablet-1-4"
           >
-            <div className="catalog-selectors-label">Sort by</div>
-            <select
-              className="catalog-selectors-sort"
-              value={sortBy}
-              onChange={(event) => {
-                setSortBy(event.target.value);
-                setCurrentPage(1);
-              }}
-            >
-              <option value="Newest">Newest</option>
-              <option value="Alphabetically">Alphabetically</option>
-              <option value="Cheapest">Cheapest</option>
-            </select>
-
+            <div className="catalog-selectors-label ">Sort by</div>
+            <div className="wrapper">
+              <select
+                className="catalog-selectors-sort grid__item grid__item--1-2
+              grid__item--tablet-1-4"
+                value={sortBy}
+                onChange={(event) => {
+                  setSortBy(event.target.value);
+                  setCurrentPage(1);
+                }}
+              >
+                <option value="Newest">Newest</option>
+                <option value="Alphabetically">Alphabetically</option>
+                <option value="Cheapest">Cheapest</option>
+              </select>
+            </div>
           </div>
           <div className="
             grid__item
@@ -74,21 +77,27 @@ export const CatalogPage: React.FC = memo(() => {
             grid__item--desktop-5-7"
           >
             <div className="catalog-selectors-label">Items on page</div>
-            <select
-              className="catalog-selectors-perpage"
-              value={itemsPerPage}
-              onChange={(event) => {
-                setItemsPerPage(Number(event.target.value));
-                setCurrentPage(1);
-              }}
-            >
-              <>
-                <option value="4">4</option>
-                <option value="8">8</option>
-                <option value="16">16</option>
-                <option value="95">All</option>
-              </>
-            </select>
+            <div className="wrapper">
+              <select
+                className="
+                catalog-selectors-perpage
+                grid__item--3-4
+                grid__item--tablet-5-7
+                grid__item--desktop-5-7"
+                value={itemsPerPage}
+                onChange={(event) => {
+                  setItemsPerPage(Number(event.target.value));
+                  setCurrentPage(1);
+                }}
+              >
+                <>
+                  <option value="4">4</option>
+                  <option value="8">8</option>
+                  <option value="16">16</option>
+                  <option value="95">All</option>
+                </>
+              </select>
+            </div>
           </div>
         </div>
 
