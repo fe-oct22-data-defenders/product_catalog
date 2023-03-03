@@ -35,7 +35,7 @@ export const ProductCard: FC<Props> = ({
             href="/"
             className="phone__name--link"
           >
-            {name}
+            {`${name} (iMT9G2FS/A)`}
           </a>
         </h2>
 

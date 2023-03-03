@@ -4,7 +4,9 @@
 @import './utils/reset';
 @import './utils/fonts';
 @import './grid';
+@import './utils/container.scss';
 @import '../components/Header/Navbar/Navbar';
+
 @import '../components/ProductCard/ProductCart';
 @import '../components/ButtonAccent/ButtonAccent';
 @import '../components/ButtonFavourite/ButtonFavourite'
