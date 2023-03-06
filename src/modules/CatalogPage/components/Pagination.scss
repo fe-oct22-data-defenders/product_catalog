@@ -24,30 +24,26 @@
     align-items: center;
     list-style: none;
     text-decoration: none;
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
+    
     color: $white;
     background-color: $surface1;
     margin: 0 4px;
 
+    @include onSmallPhone {
+      width: 32px;
+      height: 32px;
+    }
+
     &_prev {
       margin-right: 16px;
       background-color: $surface2;
-
-      // &::after {
-      //   // content: url('../../../public/img/pag/arrowleft.svg');
-
-      // }
     }
 
     &_next {
       margin-left: 16px;
       background-color: $surface2;
-
-      // &::after {
-      //   // content: url('../../../public/img/pag/arrowrigth.svg');
-
-      // }
     }
 
     &:hover {

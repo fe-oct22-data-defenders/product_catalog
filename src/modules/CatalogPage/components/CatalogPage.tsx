@@ -12,6 +12,7 @@ import './CatalogPage.scss';
 import { Phone } from '../../../types/Phone';
 import { getPhones } from '../../../api/phones';
 import { Loader } from '../../../components/Loader/Loader';
+import { searchByPage } from './helpers/searchByPage';
 
 export const CatalogPage: React.FC = memo(() => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -19,7 +20,7 @@ export const CatalogPage: React.FC = memo(() => {
   const [isLoading, setIsLoading] = useState(false);
   const [isFirstLoading, setIsFirstLoading] = useState(true);
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const perPage = Number(searchParams.get('perPage')) || 16;
   const currentPage = Number(searchParams.get('page')) || 1;
   const sortBy = String(searchParams.get('sortBy')) || 'newest';
@@ -47,7 +48,7 @@ export const CatalogPage: React.FC = memo(() => {
   useEffect(() => {
     setTimeout(() => {
       setIsFirstLoading(false);
-    }, 500);
+    }, 1500);
   }, []);
 
   return (
@@ -61,46 +62,57 @@ export const CatalogPage: React.FC = memo(() => {
           <div className="catalog">
             <div className="grid catalog-selectors">
               <div className="
-              grid__item
-              grid__item--1-2
-              grid__item--tablet-1-4"
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-1-4"
               >
                 <div className="catalog-selectors-label ">Sort by</div>
                 <div className="wrapper">
                   <select
-                    className="catalog-selectors-sort grid__item grid__item--1-2
-              grid__item--tablet-1-4"
+                    className="
+                      catalog-selectors-sort
+                      grid__item
+                      grid__item--1-2
+                      grid__item--tablet-1-4"
                     value={sortBy}
-                  // onChange={(event) => {
-                  //   setSortBy(event.target.value);
-                  //   setCurrentPage(1);
-                  // }}
+                    onChange={(event) => {
+                      setSearchParams(
+                        searchByPage(
+                          searchParams,
+                          { sortBy: event.target.value },
+                        ),
+                      );
+                    }}
                   >
-                    <option value="Newest">Newest</option>
-                    <option value="Alphabetically">Alphabetically</option>
-                    <option value="Cheapest">Cheapest</option>
+                    <option value="newest">Newest</option>
+                    <option value="alphabetically">Alphabetically</option>
+                    <option value="cheapest">Cheapest</option>
                   </select>
                 </div>
               </div>
               <div className="
-            grid__item
-            grid__item--3-4
-            grid__item--tablet-5-7
-            grid__item--desktop-5-7"
+                grid__item
+                grid__item--3-4
+                grid__item--tablet-5-7
+                grid__item--desktop-5-7"
               >
                 <div className="catalog-selectors-label">Items on page</div>
                 <div className="wrapper">
                   <select
                     className="
-                catalog-selectors-perpage
-                grid__item--3-4
-                grid__item--tablet-5-7
-                grid__item--desktop-5-7"
+                      catalog-selectors-perpage
+                      grid__item--3-4
+                      grid__item--tablet-5-7
+                      grid__item--desktop-5-7"
                     value={perPage}
-                  // onChange={(event) => {
-                  //   setItemsPerPage(Number(event.target.value));
-                  //   setCurrentPage(1);
-                  // }}
+                    onChange={(event) => {
+                      setSearchParams(
+                        searchByPage(
+                          searchParams,
+                          { perPage: event.target.value },
+                        ),
+                      );
+                    }}
                   >
                     <>
                       <option value="4">4</option>

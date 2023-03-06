@@ -1,8 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import './Pagination.scss';
 import { getPages } from './helpers/getPages';
+import { searchByPage } from './helpers/searchByPage';
 
 type Props = {
   total: number,
@@ -15,6 +16,8 @@ export const Pagination: React.FC<Props> = React.memo(({
   perPage,
   currentPage,
 }) => {
+  const [searchParams] = useSearchParams();
+
   const firstPage = 1;
   const lastPage = Math.ceil(total / perPage);
   const isFirstPage = currentPage === 1;
@@ -38,7 +41,9 @@ export const Pagination: React.FC<Props> = React.memo(({
             'pagination__link', 'pagination__link_prev',
             { pagination__link_disabled: isFirstPage },
           )}
-          to={isFirstPage ? `?page=${currentPage}` : `?page=${currentPage - 1}`}
+          to={{
+            search: searchByPage(searchParams, { page: `${currentPage - 1}` }),
+          }}
         >
           {'<'}
         </Link>
@@ -46,7 +51,7 @@ export const Pagination: React.FC<Props> = React.memo(({
 
       <li className="pagination__list">
         {numberOfPages.map(page => (
-          <div>
+          <div key={page}>
             {page === pageReplacement ? (
               <span>{pageReplacement}</span>
             ) : (
@@ -55,7 +60,7 @@ export const Pagination: React.FC<Props> = React.memo(({
                   'pagination__link',
                   { pagination__link_active: currentPage === page },
                 )}
-                to={`?page=${page}`}
+                to={{ search: searchByPage(searchParams, { page: `${page}` }) }}
               >
                 {page}
               </Link>
@@ -70,7 +75,9 @@ export const Pagination: React.FC<Props> = React.memo(({
             'pagination__link', 'pagination__link_next',
             { pagination__link_disabled: isLastPage },
           )}
-          to={isLastPage ? `?page=${currentPage}` : `?page=${currentPage + 1}`}
+          to={{
+            search: searchByPage(searchParams, { page: `${currentPage + 1}` }),
+          }}
         >
           {'>'}
         </Link>
