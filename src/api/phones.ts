@@ -1,8 +1,9 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 import { PhonesResponse } from '../types/PhonesResponse';
 
 // eslint-disable-next-line max-len
-axios.defaults.baseURL = 'http://data-defenders-product-catalog-api.up.railway.app';
+axios.defaults.baseURL = 'https://data-defenders-product-catalog-api.up.railway.app';
 
 export function getPhones(
   page: number,
