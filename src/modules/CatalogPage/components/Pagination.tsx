@@ -19,7 +19,6 @@ export const Pagination: React.FC<Props> = React.memo(({
   onPageChange,
 }) => {
   const [searchParams] = useSearchParams();
-
   const numberOfPages = getNumbers(1, Math.ceil(total / perPage));
   const lastPage = Math.ceil(total / perPage);
 

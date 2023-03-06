@@ -4,9 +4,10 @@
 @import './utils/reset';
 @import './utils/fonts';
 @import './grid';
-@import './utils/container.scss';
+@import './utils/container';
 @import '../components/Header/Navbar/Navbar';
-
 @import '../components/ProductCard/ProductCart';
 @import '../components/ButtonAccent/ButtonAccent';
-@import '../components/ButtonFavourite/ButtonFavourite'
+@import '../components/ButtonFavourite/ButtonFavourite';
+@import '../modules/CartPage/components/CartPage.module';
+@import '../components/ButtonBack/ButtonBack';
