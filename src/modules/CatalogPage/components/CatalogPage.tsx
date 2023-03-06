@@ -13,6 +13,7 @@ import { Phone } from '../../../types/Phone';
 import { getPhones } from '../../../api/phones';
 import { Loader } from '../../../components/Loader/Loader';
 import { searchByPage } from './helpers/searchByPage';
+import { HomeButton } from '../../../components/HomeButton';
 
 export const CatalogPage: React.FC = memo(() => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -57,6 +58,9 @@ export const CatalogPage: React.FC = memo(() => {
         <Loader />
       ) : (
         <>
+          <div className="catalog-page__home-button-wrapper">
+            <HomeButton text="Phones" />
+          </div>
           <h1 className="catalog-page__title">Mobile phones</h1>
           <p className="catalog-page__subtitle">{`${total} models`}</p>
           <div className="catalog">

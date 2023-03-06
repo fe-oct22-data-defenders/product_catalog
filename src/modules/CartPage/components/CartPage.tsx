@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { ButtonAccent } from '../../../components/ButtonAccent/ButtonAccent';
+import { ButtonBack } from '../../../components/ButtonBack/ButtonBack';
 import { CartItem } from '../../../components/CartItem/CartItem';
 import phonesFromServer from '../../../public/api/phones.json';
 import './CartPage.scss';
@@ -13,6 +14,7 @@ export const CartPage: React.FC = memo(() => {
 
   return (
     <section className="cart-page">
+      <div className="cart-page__back-button"><ButtonBack /></div>
       <h1 className="cart-page__title">Cart</h1>
       <div className="grid">
         <div className="
