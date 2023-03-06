@@ -1,0 +1,24 @@
+.button-back {
+  display: flex;
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    background-image: url("../../public/header-icons/goBack.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+  }
+
+  &__button {
+    width: 31px;
+    height: 15px;
+    background-color: transparent;
+    border-color: transparent;
+    color: $white;
+    font-family: Mont-Regular, sans-serif;
+    font-size: 12px;
+    line-height: 100%;
+
+  }
+}

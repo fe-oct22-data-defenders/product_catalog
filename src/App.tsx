@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { HomePage } from './modules/HomePage/components/HomePage';
+import { CartPage } from './modules/CartPage/components/CartPage';
 
 export const App: FC = () => {
   return (
@@ -20,7 +21,7 @@ export const App: FC = () => {
             <Route path="tablets" element={<h1>Tablets</h1>} />
             <Route path="accessories" element={<h1>Accessories</h1>} />
             <Route path="favorites" element={<h1>Favorites</h1>} />
-            <Route path="card" element={<h1>CardPage</h1>} />
+            <Route path="card" element={<CartPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
