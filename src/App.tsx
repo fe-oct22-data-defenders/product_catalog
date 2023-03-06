@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
-import { Header } from './components/Header/Header';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { HomePage } from './modules/HomePage/components/HomePage';
@@ -26,6 +27,7 @@ export const App: FC = () => {
           </Routes>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
