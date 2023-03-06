@@ -1,21 +1,10 @@
-<<<<<<< HEAD
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Header } from './components/Header/Header';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { HomePage } from './modules/HomePage/components/HomePage';
-=======
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
->>>>>>> 42a0cc5 (fixed adaptability)
-=======
-import { Navbar } from './components/Header/Navbar/Navbar';
-import { Logo } from './components/Logo/Logo';
-import { Footer } from './components/Footer/Footer';
->>>>>>> 8d662dd (added footer to app, added logo to footer, fixed vars, added icons directory, changed some linter rules)
 
 export const App: FC = () => {
   return (
@@ -40,15 +29,5 @@ export const App: FC = () => {
       </div>
       <Footer />
     </>
-=======
-import './App.scss';
-import { Footer } from './components/Footer/Footer';
-
-export const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Footer />
-    </div>
->>>>>>> b4731b4 (initial footer)
   );
 };
