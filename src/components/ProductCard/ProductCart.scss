@@ -14,8 +14,8 @@ iframe {
 
   &__image {
     display: block;
-    padding-bottom: 24px;
     height: $card-image-hight-mobile;
+    margin: 0 auto 24px;
 
     @include onTablet {
       height: $card-image-hight-tablet;

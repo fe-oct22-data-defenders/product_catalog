@@ -1,0 +1,36 @@
+@import "../../styles/utils/vars";
+
+.loader {
+  display: flex;
+  width: 80px;
+  height: 80px;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid $white;
+    border-color: $white transparent $white transparent;
+    animation: loader 1.2s linear infinite;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -2,12 +2,14 @@
 @import "../../styles/utils/vars";
 
 .product-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
   @include onTablet {
     display: grid;
     justify-content: center;
-    gap: 16px;
     grid-template-columns: repeat(2, 1fr);
-
   }
 
   @include onWideTablet {

@@ -1,31 +1,15 @@
 @import "../../../styles/utils/vars";
+@import "../../../styles/utils/mixins";
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
 
-  &__button {
+  &__list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    text-decoration: none;
-    width: 32px;
-    height: 32px;
-    background-color: $surface2;
     color: $white;
-
-    &__disabled {
-      background-color: $black;
-      color: $icons;
-      pointer-events: none;
-      border: 1px solid $elements;
-    }
-
-    &:hover {
-      background-color: $icons;
-    }
   }
 
   &__link {
@@ -34,31 +18,39 @@
     align-items: center;
     list-style: none;
     text-decoration: none;
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
+    
     color: $white;
     background-color: $surface1;
-    &__active {
-      background-color: $accent;
-      color: $white;
+    margin: 0 4px;
+
+    @include onSmallPhone {
+      width: 32px;
+      height: 32px;
+    }
+
+    &_prev {
+      margin-right: 16px;
+      background-color: $surface2;
+    }
+
+    &_next {
+      margin-left: 16px;
+      background-color: $surface2;
     }
 
     &:hover {
       background-color: $icons;
+      cursor: pointer;
     }
-  }
 
-  li {
-    margin-right: 8px;
-    &:first-child{
-      margin-right: 16px;
+    &_active {
+      background-color: $accent;
     }
-    &:last-child{
-      margin-left: 16px;
-      margin-right: 0;
-    }
-    &:nth-last-child(2) {
-      margin-right: 0;
+
+    &_disabled {
+      pointer-events: none;
     }
   }
 }

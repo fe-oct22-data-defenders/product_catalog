@@ -47,18 +47,18 @@ export const ProductCard: FC<Props> = ({
 
       <div className="phone__decoration--line" />
 
-      <p className="phone__description">
+      <div className="phone__description">
         <h3 className="phone__description--name">Screen</h3>
         <h2 className="phone__description--property">{screen}</h2>
-      </p>
-      <p className="phone__description">
+      </div>
+      <div className="phone__description">
         <h3 className="phone__description--name">Capacity</h3>
         <h2 className="phone__description--property">{capacity}</h2>
-      </p>
-      <p className="phone__description">
+      </div>
+      <div className="phone__description">
         <h3 className="phone__description--name">RAM</h3>
         <h2 className="phone__description--property">{ram}</h2>
-      </p>
+      </div>
 
       <div className="phone__buttons">
         <ButtonAccent
