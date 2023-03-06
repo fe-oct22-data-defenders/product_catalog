@@ -1,0 +1,25 @@
+.header {
+  background-color: $black;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-bottom: 1px solid $surface2;
+  padding-left: 16px;
+
+  // @include onTablet {
+    // position: static;
+    
+  //}
+
+
+  // @include onDesktop {
+    // padding-left: 24px;
+  // }
+
+   &__menu-list--mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+   }
+}
