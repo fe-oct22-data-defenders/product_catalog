@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { FC } from 'react';
 import { Header } from './components/Header';
-import { MobileMenu } from './components/MobileMenu';
 import phonesFromServer from './public/api/phones.json';
 // eslint-disable-next-line max-len
 import { ProductCardList } from './components/ProductCardList.tsx/ProductCardList';
@@ -10,7 +9,6 @@ export const App: FC = () => {
   return (
     <>
       <Header />
-      <MobileMenu />
       <div className="section">
         <div className="container">
           <Routes>

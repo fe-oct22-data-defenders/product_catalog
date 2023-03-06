@@ -1,12 +1,18 @@
-import React from 'react';
+import cn from 'classnames';
+import React, { FC, useState } from 'react';
 import { Navbar } from './Navbar';
 import { Logo } from '../Logo';
 
-export const Header = () => {
+export const Header: FC = () => {
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+
   return (
-    <header className="header">
+    <header className={cn('header', {
+      'header__menu-list--mobile': isMenuOpen,
+    })}
+    >
       <Logo />
-      <Navbar />
+      <Navbar isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
     </header>
   );
 };

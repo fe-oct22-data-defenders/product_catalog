@@ -1,5 +1,5 @@
+import React, { FC, memo } from 'react';
 import cn from 'classnames';
-import React, { FC, memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { PageNavLink } from './PageNavLink/PageNavLink';
 import heartLikeIcon from '../../../public/header-icons/heart.svg';
@@ -7,6 +7,7 @@ import shoppingBagIcon from '../../../public/header-icons/shopcart.svg';
 import menuIcon from '../../../public/header-icons/menu.svg';
 import closeMenu from '../../../public/header-icons/Union.svg';
 import { NavLinkType } from '../../../types/NavLinkType';
+// import { Header } from '../../Header';
 
 const navLinks: NavLinkType[] = [
   {
@@ -31,57 +32,93 @@ const navLinks: NavLinkType[] = [
   },
 ];
 
-export const Navbar: FC = memo(() => {
-  const [menuOpen, setMenuOpen] = useState(false);
+interface Props {
+  isMenuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const handleMenu = () => {
-    setMenuOpen((prevState) => !prevState);
-  };
-
+export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
   return (
     <>
       <nav className="navbar">
-        <ul className="navbar__menu-list">
+        <ul className={cn('navbar__menu-list', {
+          'navbar__menu-list--mobile': isMenuOpen,
+        })}
+        >
           {navLinks.map((navLink) => (
             <li key={navLink.id} className="navbar__menu-list-li">
-              <PageNavLink to={navLink.adress} text={navLink.text} />
+              <PageNavLink
+                to={navLink.adress}
+                text={navLink.text}
+                setMenuOpen={setMenuOpen}
+              />
             </li>
           ))}
         </ul>
       </nav>
-      <ul className="navbar__shopcard-control">
-        <li>
+      <ul className={cn('navbar__shopcard-control', {
+        'navbar__shopcard-control--mobile': isMenuOpen,
+      })}
+      >
+        <li className={cn('navbar__shopcard-control-item', {
+          'navbar__shopcard-control--item--mobile': isMenuOpen,
+        })}
+        >
           <NavLink
             className={({ isActive }) => (
               cn('navbar__shopcard-control-link', {
                 'navbar__menu-list-link--active': isActive,
+                'navbar__menu-list-link--mobile': isMenuOpen,
               })
             )}
             to="favorites"
           >
-            <img src={heartLikeIcon} alt="favorites" />
+            <img
+              className="navbar__shopcard-control-link__img"
+              src={heartLikeIcon}
+              alt="favorites"
+            />
           </NavLink>
         </li>
-        <li>
+        <li className={cn('navbar__shopcard-control-item', {
+          'navbar__shopcard-control--item--mobile': isMenuOpen,
+        })}
+        >
           <NavLink
             className={({ isActive }) => (
               cn('navbar__shopcard-control-link', {
                 'navbar__menu-list-link--active': isActive,
+                'navbar__menu-list-link--mobile': isMenuOpen,
               })
             )}
             to="card"
           >
-            <img src={shoppingBagIcon} alt="card" />
+            <img
+              className="navbar__shopcard-control-link__img"
+              src={shoppingBagIcon}
+              alt="card"
+            />
           </NavLink>
         </li>
       </ul>
       <div className="navbar__menu-btn">
-        { !menuOpen ? (
-          <NavLink to="/" className="burger__link" onClick={handleMenu}>
-            <img src={menuIcon} alt="menu" />
+        {!isMenuOpen ? (
+          <NavLink
+            to="/"
+            className="burger__link"
+            onClick={() => setMenuOpen(true)}
+          >
+            <img
+              src={menuIcon}
+              alt="menu"
+            />
           </NavLink>
         ) : (
-          <NavLink to="/" className="burger__link" onClick={handleMenu}>
+          <NavLink
+            to="/"
+            className="burger__link navbar__burger__link--close"
+            onClick={() => setMenuOpen(false)}
+          >
             <img src={closeMenu} alt="closeMenu" />
           </NavLink>
         )}
