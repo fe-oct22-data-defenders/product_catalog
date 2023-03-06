@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "./static/css/main.b3f9a14a.css",
-    "main.js": "./static/js/main.8def9384.js",
+    "main.css": "./static/css/main.f5fc916a.css",
+    "main.js": "./static/js/main.c81d847c.js",
     "static/media/logo.svg": "./static/media/logo.2d31127e860b19bd1dedf63df53a0b06.svg",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/shopcart.svg": "./static/media/shopcart.c6fae82331d2a1c4adc3ba6f43f6f325.svg",
     "static/media/heart.svg": "./static/media/heart.c941c4e177d6356f81fcee90081abf03.svg",
+    "static/media/Home.svg": "./static/media/Home.901f72c9436f9e8c63573838c422c80d.svg",
+    "static/media/cross.svg": "./static/media/cross.3feccb3efb8d52eb7a6c.svg",
+    "static/media/crosshov.svg": "./static/media/crosshov.911c2c686f56c2943d2c.svg",
     "index.html": "./index.html",
     "static/media/menu.svg": "./static/media/menu.571b3bb49f127bd00746aadd1561e16f.svg",
+    "static/media/plus.svg": "./static/media/plus.281bb597ffb6205d92c0.svg",
+    "static/media/arrow.svg": "./static/media/arrow.90170297dda7672a6426d53912c6c3b8.svg",
     "static/media/Vector.svg": "./static/media/Vector.bbf35a32db574018a54e.svg",
     "static/media/goBack.svg": "./static/media/goBack.4dc386686e1f77999a38.svg",
     "static/media/back-button.svg": "./static/media/back-button.4a750d9ba7eef45d57ab.svg",
-    "main.b3f9a14a.css.map": "./static/css/main.b3f9a14a.css.map",
-    "main.8def9384.js.map": "./static/js/main.8def9384.js.map"
+    "static/media/minus.svg": "./static/media/minus.c6e118487bc364ed13cf.svg",
+    "static/media/minusact.svg": "./static/media/minusact.0365a13e7f5baa53bce8.svg",
+    "main.f5fc916a.css.map": "./static/css/main.f5fc916a.css.map",
+    "main.c81d847c.js.map": "./static/js/main.c81d847c.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3f9a14a.css",
-    "static/js/main.8def9384.js"
+    "static/css/main.f5fc916a.css",
+    "static/js/main.c81d847c.js"
   ]
 }
