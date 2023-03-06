@@ -1,31 +1,21 @@
 @import "../../../styles/utils/vars";
+@import "../../../styles/utils/mixins";
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 64px;
 
-  &__button {
+  &__list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    text-decoration: none;
-    width: 32px;
-    height: 32px;
-    background-color: $surface2;
+    margin-bottom: 16px;
     color: $white;
+  }
 
-    &__disabled {
-      background-color: $black;
-      color: $icons;
-      pointer-events: none;
-      border: 1px solid $elements;
-    }
-
-    &:hover {
-      background-color: $icons;
-    }
+  @include onTablet {
+    margin-bottom: 80px;
   }
 
   &__link {
@@ -38,27 +28,39 @@
     height: 32px;
     color: $white;
     background-color: $surface1;
-    &__active {
-      background-color: $accent;
-      color: $white;
+    margin: 0 4px;
+
+    &_prev {
+      margin-right: 16px;
+      background-color: $surface2;
+
+      // &::after {
+      //   // content: url('../../../public/img/pag/arrowleft.svg');
+
+      // }
+    }
+
+    &_next {
+      margin-left: 16px;
+      background-color: $surface2;
+
+      // &::after {
+      //   // content: url('../../../public/img/pag/arrowrigth.svg');
+
+      // }
     }
 
     &:hover {
       background-color: $icons;
+      cursor: pointer;
     }
-  }
 
-  li {
-    margin-right: 8px;
-    &:first-child{
-      margin-right: 16px;
+    &_active {
+      background-color: $accent;
     }
-    &:last-child{
-      margin-left: 16px;
-      margin-right: 0;
-    }
-    &:nth-last-child(2) {
-      margin-right: 0;
+
+    &_disabled {
+      pointer-events: none;
     }
   }
 }

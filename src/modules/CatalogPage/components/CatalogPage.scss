@@ -42,12 +42,7 @@
       font-size: 12px;
       line-height: 15px;
       color: $secondary;
-      margin-top: 32px;
       margin-bottom: 4px;
-
-      @include onTablet {
-        margin-top: 40px;
-      }
     }
 
     &-sort {

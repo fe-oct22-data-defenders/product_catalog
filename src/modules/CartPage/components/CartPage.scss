@@ -1,0 +1,80 @@
+@import "../../../styles/utils/mixins";
+@import "../../../styles/utils/vars";
+
+.cart-page {
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    color: $white;
+    margin-top: 64px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+      margin-top: 72px;
+    }
+  }
+}
+
+.checkout {
+  padding: 24px;
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  text-align: center;
+  border: 1px solid $elements;
+
+  &-price {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    color: $white;
+  }
+
+  &-subtitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $elements;
+
+    @include onDesktop {
+      padding-bottom: 25px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    max-height: 100%;
+    padding: 14px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: $white;
+    background-color: $accent;
+
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accentHover;
+    }
+    @include onDesktop {
+      &:focus {
+        background-color: $surface2;
+      }
+    }
+  }
+}

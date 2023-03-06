@@ -1,0 +1,132 @@
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/vars";
+
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 160px;
+  background-color: $surface1;
+
+  padding: 16px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 28px;
+  }
+
+  @include onTablet {
+    height: 128px;
+    padding: 24px;
+    flex-direction: row;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+
+    @include onTablet {
+      justify-content: space-between;
+      min-width: 220px;
+      gap: 24px;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 66px;
+    width: 66px;
+
+    @include onTablet {
+      height: 100%;
+    }
+  }
+
+  &__cross_button {
+    border: none;
+    height: 16px;
+    width: 16px;
+    background-color: $surface1;
+    background-image: url(../../public/img/cartitem/cross.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:hover {
+      background-image: url(../../public/img/cartitem/crosshov.svg);
+    }
+  }
+
+  &__title {
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $white;
+    text-decoration: none;
+    text-align: left;
+    word-break: break-all;
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    color: $white;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    width: 96px;
+    margin: 8px;
+
+    &__number {
+      text-align: center;
+      color: $white;
+    }
+
+    &__button__plus {
+      display: flex;
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: $surface2;
+      background-image: url(../../public/img/cartitem/plus.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+
+    &__button__minus {
+      display: flex;
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $icons;
+      background-image: url(../../public/img/cartitem/minusact.svg);
+      background-color: $surface2;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+
+      &:disabled {
+        background-image: url(../../public/img/cartitem/minus.svg);
+        border: 1px solid $icons;
+        background-color: $surface1;
+        cursor: default;
+      }
+    }
+  }
+}
