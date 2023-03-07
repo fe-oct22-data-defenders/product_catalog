@@ -2,12 +2,13 @@
   margin: 0 auto;
   max-width: 1136px;
   padding: 0 16px;
+  height: 100%;
 
   @include onTablet {
     padding: 0 24px;
   }
 
   @include onDesktop {
-    padding: 0 32px;
+    padding: 0;
   }
 }

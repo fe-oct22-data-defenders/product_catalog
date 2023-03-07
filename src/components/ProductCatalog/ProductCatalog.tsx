@@ -2,24 +2,33 @@ import React from 'react';
 import { Phone } from '../../types/Phone';
 import './ProductCatalog.scss';
 import { ProductCard } from '../ProductCard/ProductCard';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 type Props = {
   phones: Phone[];
 };
 
-export const ProductCatalog: React.FC<Props> = ({ phones }) => (
-  <div className="product-catalog">
-    {phones.map(phone => (
-      <ProductCard
-        key={phone.id}
-        name={phone.name}
-        image={phone.image}
-        fullPrice={phone.fullPrice}
-        price={phone.price}
-        screen={phone.screen}
-        capacity={phone.capacity}
-        ram={phone.ram}
-      />
-    ))}
-  </div>
-);
+export const ProductCatalog: React.FC<Props> = ({
+  phones,
+}) => {
+  const [cart, favorites] = useLocalStorage();
+
+  return (
+    <div className="product-catalog">
+      {phones.map(phone => {
+        const isInCart = Boolean(cart.find((el) => el.id === phone.id));
+        const isInFavorites = Boolean(
+          favorites.find((el) => el.id === phone.id),
+        );
+
+        return (
+          <ProductCard
+            phone={phone}
+            isInCart={isInCart}
+            isInFavorites={isInFavorites}
+          />
+        );
+      })}
+    </div>
+  );
+};

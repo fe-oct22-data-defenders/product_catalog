@@ -3,14 +3,11 @@ iframe {
 }
 
 .phone {
+  display: flex;
+  flex-direction: column;
   padding: 32px;
   background: $surface1;
-  height: $card-higth-mobile;
   width: 100%;
-
-  @include onTablet {
-    height: $card-hight-tablet;
-  }
 
   &__image {
     display: block;
@@ -23,10 +20,11 @@ iframe {
   }
 
   &__name {
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
+    flex-grow: 1;
 
     &--link {
       font-family: Mont-Regular, sans-serif;
@@ -55,7 +53,7 @@ iframe {
     &--startPrice {
       font-weight: 600;
       font-size: 22px;
-      line-height: 28px;
+      line-height: 140%;
       text-decoration-line: line-through;
       color: $secondary;
     }
@@ -70,6 +68,10 @@ iframe {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+
+    &--last {
+      margin-bottom: 16px ;
+    }
 
     &--name {
       font-family: Mont-Regular, sans-serif;

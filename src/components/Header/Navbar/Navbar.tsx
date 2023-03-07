@@ -30,7 +30,12 @@ const navLinks: NavLinkType[] = [
   },
 ];
 
-export const Navbar: FC = memo(() => {
+type Props = {
+  cartItemsNum: number,
+  favoriteItemsNum: number,
+};
+
+export const Navbar: FC<Props> = memo(({ cartItemsNum, favoriteItemsNum }) => {
   return (
     <>
       <nav className="navbar">
@@ -53,6 +58,11 @@ export const Navbar: FC = memo(() => {
             to="favorites"
           >
             <img src={heartLikeIcon} alt="favorites" />
+            {favoriteItemsNum !== 0 && (
+              <div className="navbar__icon-number">
+                {favoriteItemsNum}
+              </div>
+            )}
           </NavLink>
         </li>
         <li>
@@ -65,6 +75,11 @@ export const Navbar: FC = memo(() => {
             to="card"
           >
             <img src={shoppingBagIcon} alt="card" />
+            {cartItemsNum !== 0 && (
+              <div className="navbar__icon-number">
+                {cartItemsNum}
+              </div>
+            )}
           </NavLink>
         </li>
       </ul>
