@@ -4,22 +4,26 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Phone } from '../../types/Phone';
 import './CartItem.scss';
-// import cross from '../../public/img/cartitem/cross.svg';
 
 type Props = {
-  phone: Phone
+  phone: Phone,
 };
 
-export const CartItem: FC<Props> = memo(({ phone }) => {
+export const CartItem: FC<Props> = memo(({
+  phone,
+}) => {
   const {
     name,
     price,
     image,
+    counter,
   } = phone;
 
-  const [counter, setCounter] = useState(1);
+  const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
+
   const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
@@ -27,7 +31,7 @@ export const CartItem: FC<Props> = memo(({ phone }) => {
       setIsDisabled(true);
     }
 
-    if (counter > 1) {
+    if (counter && counter > 1) {
       setIsDisabled(false);
     }
   }, [counter]);
@@ -35,9 +39,12 @@ export const CartItem: FC<Props> = memo(({ phone }) => {
   return (
     <div className="cartItem">
       <div className="cartItem__container">
-        <button type="button" className="cartItem__cross_button">
-          {/* <img src={cross} alt="close card" /> */}
-        </button>
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <button
+          type="button"
+          className="cartItem__cross_button"
+          onClick={() => removeFromLocalStorage('phones', phone.id, true)}
+        />
 
         <img src={image} alt={name} className="cartItem__img" />
 
@@ -51,8 +58,8 @@ export const CartItem: FC<Props> = memo(({ phone }) => {
           <button
             type="button"
             className="cartItem__counter__button__minus"
-            onClick={() => setCounter(counter - 1)}
             disabled={isDisabled}
+            onClick={() => removeFromLocalStorage('phones', phone.id, false)}
           >
             {/* minus */}
           </button>
@@ -62,13 +69,13 @@ export const CartItem: FC<Props> = memo(({ phone }) => {
           <button
             type="button"
             className="cartItem__counter__button__plus"
-            onClick={() => setCounter(counter + 1)}
+            onClick={() => addToLocalStorage('phones', phone)}
           >
             {/* plus */}
           </button>
         </div>
 
-        <p className="cartItem__price">{`$${counter * price}`}</p>
+        <p className="cartItem__price">{`$${counter && (counter * price)}`}</p>
       </div>
     </div>
   );

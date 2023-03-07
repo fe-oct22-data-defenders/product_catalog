@@ -6,10 +6,11 @@ import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { HomePage } from './modules/HomePage/components/HomePage';
 import { CartPage } from './modules/CartPage/components/CartPage';
+import './App.scss';
 
 export const App: FC = () => {
   return (
-    <>
+    <div className="app">
       <Header />
       <div className="section">
         <div className="container">
@@ -29,6 +30,6 @@ export const App: FC = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };

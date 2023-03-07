@@ -49,7 +49,7 @@ export const CatalogPage: React.FC = memo(() => {
   useEffect(() => {
     setTimeout(() => {
       setIsFirstLoading(false);
-    }, 1500);
+    }, 500);
   }, []);
 
   return (
@@ -132,7 +132,9 @@ export const CatalogPage: React.FC = memo(() => {
               ? (
                 <Loader />)
               : (
-                <ProductCatalog phones={phones} />
+                <ProductCatalog
+                  phones={phones}
+                />
               )}
             <Pagination
               total={total}

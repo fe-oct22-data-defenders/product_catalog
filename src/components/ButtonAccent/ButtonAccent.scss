@@ -1,5 +1,4 @@
 .button-accent {
-  width: 100%;
   color: white;
   background-color: $accent;
   height: 40px;
@@ -8,17 +7,14 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 40px;
-  border-color: transparent;
+  transition: background-color 0.3s;
+  flex-grow: 1;
 
   &:hover {
     background-color: $accentHover;
   }
 
-  @include onDesktop {
-    &:focus {
-      background-color: $surface2;
-    }
+  &--added {
+    background-color: $surface2;
   }
-
-
 }

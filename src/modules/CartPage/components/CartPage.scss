@@ -3,9 +3,30 @@
 
 .cart-page {
   margin-bottom: 56px;
+  position: relative;
+  height: 100%;
 
   @include onTablet {
     margin-bottom: 64px;
+  }
+
+  &__without-product {
+    font-weight: 800;
+    line-height: 41px;
+    color: $white;
+    font-size: 22px;
+    width: 100%;
+    max-width: max-content;
+    margin: auto;
+
+    @include onTablet {
+      font-size: 42px;
+    }
+    
+    @include onDesktop {
+      margin-top: 70px;
+      font-size: 52px;
+    }
   }
   
   &__back-button {
@@ -34,7 +55,6 @@
 
 .checkout {
   padding: 24px;
-
   text-align: center;
   border: 1px solid $elements;
 
@@ -73,13 +93,13 @@
     line-height: 21px;
     color: $white;
     background-color: $accent;
-
     border: none;
     cursor: pointer;
 
     &:hover {
       background-color: $accentHover;
     }
+
     @include onDesktop {
       &:focus {
         background-color: $surface2;
