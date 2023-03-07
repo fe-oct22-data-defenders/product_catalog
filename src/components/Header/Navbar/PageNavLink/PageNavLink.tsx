@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 export type Props = {
   to: string;
   text: string;
-  // eslint-disable-next-line react/no-unused-prop-types
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 };
 
@@ -22,15 +21,3 @@ export const PageNavLink: FC<Props> = ({ to, text, setMenuOpen }) => (
     <div className="navbar__menu-list-link-container">{text}</div>
   </NavLink>
 );
-
-export const MenuLink: React.FC<Props> = ({ to, text, setMenuOpen }) => {
-  return (
-    <NavLink
-      onClick={() => setMenuOpen(false)}
-      to={to}
-      className={({ isActive }) => cn('menu__link', { 'is-active': isActive })}
-    >
-      {text}
-    </NavLink>
-  );
-};
