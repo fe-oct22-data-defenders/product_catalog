@@ -57,7 +57,7 @@ export const Navbar: FC<Props> = memo(({ cartItemsNum, favoriteItemsNum }) => {
             )}
             to="favorites"
           >
-            <img src={heartLikeIcon} alt="favorites" />
+            <img src={heartLikeIcon} alt="favorites" className="navbar__icon" />
             {favoriteItemsNum !== 0 && (
               <div className="navbar__icon-number">
                 {favoriteItemsNum}
@@ -74,7 +74,7 @@ export const Navbar: FC<Props> = memo(({ cartItemsNum, favoriteItemsNum }) => {
             )}
             to="card"
           >
-            <img src={shoppingBagIcon} alt="card" />
+            <img src={shoppingBagIcon} alt="card" className="navbar__icon" />
             {cartItemsNum !== 0 && (
               <div className="navbar__icon-number">
                 {cartItemsNum}
