@@ -7,7 +7,6 @@ import shoppingBagIcon from '../../../public/header-icons/shopcart.svg';
 import menuIcon from '../../../public/header-icons/menu.svg';
 import closeMenu from '../../../public/header-icons/Union.svg';
 import { NavLinkType } from '../../../types/NavLinkType';
-// import { Header } from '../../Header';
 
 const navLinks: NavLinkType[] = [
   {
@@ -73,9 +72,10 @@ export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
               })
             )}
             to="favorites"
+            onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-link__img"
+              className="navbar__shopcard-control-img"
               src={heartLikeIcon}
               alt="favorites" className="navbar__icon"
             />
@@ -98,9 +98,10 @@ export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
               })
             )}
             to="card"
+            onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-link__img"
+              className="navbar__shopcard-control-img"
               src={shoppingBagIcon}
               alt="card" className="navbar__icon"
             />
@@ -112,26 +113,29 @@ export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
           </NavLink>
         </li>
       </ul>
-      <div className="navbar__menu-btn">
+      <div className="navbar__menu__btn">
         {!isMenuOpen ? (
-          <NavLink
-            to="/"
-            className="burger__link"
+          // eslint-disable-next-line react/button-has-type
+          <button
+            className="navbar__menu__icon"
             onClick={() => setMenuOpen(true)}
           >
             <img
               src={menuIcon}
               alt="menu"
             />
-          </NavLink>
+          </button>
         ) : (
-          <NavLink
-            to="/"
-            className="burger__link navbar__burger__link--close"
+          // eslint-disable-next-line react/button-has-type
+          <button
+            className="navbar__menu__icon"
             onClick={() => setMenuOpen(false)}
           >
-            <img src={closeMenu} alt="closeMenu" />
-          </NavLink>
+            <img
+              src={closeMenu}
+              alt="closeMenu"
+            />
+          </button>
         )}
       </div>
     </>
