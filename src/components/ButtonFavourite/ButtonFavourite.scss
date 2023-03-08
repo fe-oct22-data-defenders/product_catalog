@@ -1,3 +1,5 @@
+@import '../../styles/utils/vars';
+
 .button-favourite {
   margin-left: 8px;
   width: 40px;
@@ -8,4 +10,13 @@
   background-position: center;
   color: $white;
   border: 1px solid transparent;
+  transition: all 0.3s;
+
+  &--added {
+    background-image: url("../../public/icons/heart-icon-added.svg");
+  }
+
+  &:hover {
+    background-color: $secondary;
+  }
 }

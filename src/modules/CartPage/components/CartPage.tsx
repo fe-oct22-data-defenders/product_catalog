@@ -14,9 +14,7 @@ export const CartPage: React.FC = memo(() => {
   const [, , , removeFromLocalStorage] = useLocalStorage();
 
   const toggleModal = () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    removeFromLocalStorage('phones', undefined, '[]');
+    removeFromLocalStorage('phones', undefined, true);
     setIsModalOpen(!isModalOpen);
   };
 

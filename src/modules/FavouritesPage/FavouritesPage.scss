@@ -2,17 +2,22 @@
 @import "../../styles/utils/vars";
 
 .favourites-page {
+  margin-bottom: 60px;
+  color: $white;
+
   &__title {
+    font-family: Mont-Bold, sans-serif;
+    font-style: normal;
     font-weight: 800;
     font-size: 32px;
     line-height: 41px;
     color: $white;
-    margin-top: 64px;
+    margin-top: 24px;
 
     @include onTablet {
       font-size: 48px;
       line-height: 56px;
-      margin-top: 80px;
+      margin-top: 40px;
     }
   }
 
@@ -23,6 +28,30 @@
     color: $secondary;
     margin-top: 8px;
     margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__no-items {
+    font-family: Mont-Bold, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    margin-top: 50px;
+    font-size: 22px;
+
+    @include onTablet {
+      font-size: 42px;
+    }
+
+    @include onDesktop {
+      font-size: 52px;
+    }
+  }
+
+  &__homebutton-wrapper {
+    margin: 24px 0;
 
     @include onTablet {
       margin-bottom: 40px;
