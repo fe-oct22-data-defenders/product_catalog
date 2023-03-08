@@ -25,7 +25,6 @@ export const App: FC = () => {
             <Route path="accessories" element={<h1>Accessories</h1>} />
             <Route path="favorites" element={<FavouritesPage />} />
             <Route path="card" element={<CartPage />} />
-
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>

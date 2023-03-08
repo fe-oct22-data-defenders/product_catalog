@@ -1,9 +1,11 @@
-import React from 'react';
+import cn from 'classnames';
+import React, { FC, useState } from 'react';
 import { Navbar } from './Navbar';
 import { Logo } from '../Logo';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import './Header.scss';
 
-export const Header = () => {
+export const Header: FC = () => {
   const [cart, favorites] = useLocalStorage();
 
   const cartItemsNum = cart.reduce(
@@ -12,10 +14,20 @@ export const Header = () => {
   );
   const favoriteItemsNum = favorites.length;
 
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+
   return (
-    <header className="header">
+    <header className={cn('header', {
+      'header__menu-list--mobile': isMenuOpen,
+    })}
+    >
       <Logo />
-      <Navbar cartItemsNum={cartItemsNum} favoriteItemsNum={favoriteItemsNum} />
+      <Navbar
+        cartItemsNum={cartItemsNum}
+        favoriteItemsNum={favoriteItemsNum}
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+      />
     </header>
   );
 };

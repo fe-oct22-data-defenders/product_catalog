@@ -1,0 +1,27 @@
+@import '../../styles/utils/mixins';
+@import '../../styles/utils/vars';
+
+.header {
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $surface2;
+  padding-left: 16px;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
+
+  @include onTablet {
+    position: static;
+  }
+
+  @include onDesktop {
+    padding-left: 24px;
+  }
+
+   &__menu-list--mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+   }
+}
