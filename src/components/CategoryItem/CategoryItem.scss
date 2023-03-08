@@ -1,0 +1,35 @@
+@import '../../styles/utils/mixins';
+@import '../../styles/utils/vars';
+
+.category {
+  &__img {
+    display: block;
+    width: 100%;
+    margin: 0 auto 24px;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__desc {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../styles/utils/mixins';
+@import '../../styles/utils/vars';
+
+.categories {
+  margin: 0 auto 56px;
+
+  @include onWideTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    color: $white;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}
