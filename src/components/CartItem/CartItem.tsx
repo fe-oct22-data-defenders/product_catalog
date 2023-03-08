@@ -38,7 +38,7 @@ export const CartItem: FC<Props> = memo(({
 
   return (
     <div className="cartItem">
-      <div className="cartItem__container">
+      <div className="cartItem__container cartItem__container-top">
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
         <button
           type="button"
@@ -53,7 +53,7 @@ export const CartItem: FC<Props> = memo(({
         </a>
       </div>
 
-      <div className="cartItem__container">
+      <div className="cartItem__container cartItem__container-bottom">
         <div className="cartItem__counter">
           <button
             type="button"
