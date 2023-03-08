@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PurchaseModal.scss';
 
 type Props = {
@@ -11,6 +12,7 @@ interface EventListenerOptionsWithPassive extends EventListenerOptions {
 
 export const PurchaseModal: React.FC<Props> = ({ onClose }) => {
   const [timeLeft, setTimeLeft] = useState(5);
+  const navigate = useNavigate();
 
   const preventScroll = (event: TouchEvent): void => {
     event.preventDefault();
@@ -23,9 +25,7 @@ export const PurchaseModal: React.FC<Props> = ({ onClose }) => {
 
     if (timeLeft === 0) {
       clearInterval(timer);
-      window.location.replace(
-        '/home',
-      );
+      navigate('/home');
     }
 
     return () => clearInterval(timer);

@@ -74,7 +74,7 @@ export const ProductCard: FC<Props> = ({
               onClick={() => handleAddtoCartClick('phones')}
             />
           )}
-        {isInFavorites && (<ButtonFavourite />)}
+        <ButtonFavourite isInFavorites={isInFavorites} />
       </div>
     </article>
   );

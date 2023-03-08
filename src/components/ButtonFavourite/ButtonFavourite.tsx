@@ -1,11 +1,19 @@
+import cn from 'classnames';
 import React, { FC } from 'react';
 
-export const ButtonFavourite: FC = () => {
+type Props = {
+  isInFavorites: boolean,
+};
+
+export const ButtonFavourite: FC<Props> = ({ isInFavorites }) => {
   return (
     <button
       type="button"
       aria-label="buttonFavourite"
-      className="button-favourite"
+      className={cn(
+        'button-favourite',
+        { 'button-favourite': isInFavorites },
+      )}
     />
   );
 };
