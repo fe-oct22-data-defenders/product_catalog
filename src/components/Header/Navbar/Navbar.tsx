@@ -7,6 +7,7 @@ import shoppingBagIcon from '../../../public/header-icons/shopcart.svg';
 import menuIcon from '../../../public/header-icons/menu.svg';
 import closeMenu from '../../../public/header-icons/Union.svg';
 import { NavLinkType } from '../../../types/NavLinkType';
+import './Navbar.scss';
 
 const navLinks: NavLinkType[] = [
   {
@@ -81,7 +82,7 @@ export const Navbar: FC<Props> = memo(({
             onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-img navbar__icon"
+              className="navbar__shopcard-control-img"
               src={heartLikeIcon}
               alt="favorites"
             />
@@ -107,7 +108,7 @@ export const Navbar: FC<Props> = memo(({
             onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-img navbar__icon"
+              className="navbar__shopcard-control-img"
               src={shoppingBagIcon}
               alt="card"
             />

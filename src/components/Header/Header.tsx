@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react';
 import { Navbar } from './Navbar';
 import { Logo } from '../Logo';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import './Header.scss';
 
 export const Header: FC = () => {
   const [cart, favorites] = useLocalStorage();
