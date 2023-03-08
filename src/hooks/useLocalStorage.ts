@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import { Phone } from '../types/Phone';
 
-type AddFunction = (key: string, value: Phone) => void;
-type RemoveFunction = (
+export type AddFunction = (key: string, value: Phone) => void;
+export type RemoveFunction = (
   key: string,
-  removingElId: string,
+  removingElId: string | undefined,
   clearCompletely: boolean,
 ) => void;
 type HookOutput = [Phone[], Phone[], AddFunction, RemoveFunction];
@@ -19,20 +19,34 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
   const [cart, setCart] = useState(JSON.parse(cartJSON));
   const [favorites, setFavorites] = useState(JSON.parse(favoritesJSON));
 
+  const [channel] = useState(new BroadcastChannel('my_channel'));
+
   useEffect(() => {
-    const handleStorage = (event: any) => {
+    const handleStorage = (event: StorageEvent) => {
       if (event.key === 'phones') {
-        setCart(event.body);
+        setCart(JSON.parse(event.newValue || '[]'));
       }
 
       if (event.key === 'favorites') {
-        setFavorites(event.body);
+        setFavorites(JSON.parse(event.newValue || '[]'));
       }
     };
 
     window.addEventListener('storage', handleStorage);
+    channel.onmessage = (event: MessageEvent) => {
+      if (event.data.key === 'phones') {
+        setCart(event.data.body);
+      }
 
-    return () => window.removeEventListener('storage', handleStorage);
+      if (event.data.key === 'favorites') {
+        setFavorites(event.data.body);
+      }
+    };
+
+    return () => {
+      window.removeEventListener('storage', handleStorage);
+      channel.close();
+    };
   }, []);
 
   // eslint-disable-next-line consistent-return
@@ -70,9 +84,12 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
     const event: any = new Event('storage');
 
     event.key = key;
-    event.body = storage;
-
+    event.newValue = JSON.stringify(storage);
     window.dispatchEvent(event);
+
+    const message = { key, body: storage };
+
+    channel.postMessage(message);
   }
 
   function removeFromLocalStorage(
@@ -90,53 +107,45 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
       const event: any = new Event('storage');
 
       event.key = key;
-      event.body = storage;
-
+      event.newValue = JSON.stringify([]);
       window.dispatchEvent(event);
 
-      return;
-    }
+      const message = { key, body: [] };
 
-    const exsistingProduct = storage.find(
-      (el: { id: string }) => el.id === removingElId,
-    );
+      channel.postMessage(message);
 
-    if (!exsistingProduct) {
-      return;
-    }
-
-    if (clearCompletely) {
-      storage = storage.filter((el: { id: string }) => el.id !== removingElId);
-    }
-
-    switch (key) {
-    case 'phones':
-      if (exsistingProduct.counter > 1) {
-        exsistingProduct.counter -= 1;
-      } else {
-        storage = storage.filter(
-          (el: { id: string }) => el.id !== removingElId,
-        );
+      if (clearCompletely) {
+        if (key === 'phones') {
+          setCart([]);
+        } else {
+          setFavorites([]);
+        }
       }
 
-      break;
-
-    default:
-      storage = storage.filter(
-        (el: { id: string }) => el.id !== removingElId,
-      );
-
-      break;
+      return;
     }
+
+    storage = storage.filter(
+      (el: { id: string }) => el.id !== removingElId,
+    );
 
     localStorage.setItem(key, JSON.stringify(storage));
 
     const event: any = new Event('storage');
 
     event.key = key;
-    event.body = storage;
-
+    event.newValue = JSON.stringify(storage);
     window.dispatchEvent(event);
+
+    const message = { key, body: storage };
+
+    channel.postMessage(message);
+
+    if (key === 'phones') {
+      setCart(storage);
+    } else {
+      setFavorites(storage);
+    }
   }
 
   return [cart, favorites, addToLocalStorage, removeFromLocalStorage];
