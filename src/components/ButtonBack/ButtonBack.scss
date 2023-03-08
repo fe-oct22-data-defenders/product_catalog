@@ -1,5 +1,6 @@
 .button-back {
   display: flex;
+  gap: 10px;
 
   &__icon {
     width: 10px;
@@ -11,14 +12,14 @@
   }
 
   &__button {
+    margin-top: 2px;
     width: 31px;
-    height: 15px;
+    height: 13px;
     background-color: transparent;
     border-color: transparent;
     color: $white;
     font-family: Mont-Regular, sans-serif;
     font-size: 12px;
-    line-height: 100%;
-
+    line-height: 0;
   }
 }

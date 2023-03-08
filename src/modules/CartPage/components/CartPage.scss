@@ -11,6 +11,8 @@
   }
 
   &__without-product {
+    font-family: Mont-Bold, sans-serif;
+    font-style: normal;
     font-weight: 800;
     line-height: 41px;
     color: $white;
@@ -40,8 +42,10 @@
   }
 
   &__title {
-    font-weight: 800;
+    font-family: Mont-Bold, sans-serif;
+    font-style: normal;
     font-size: 32px;
+    font-weight: 800;
     line-height: 41px;
     color: $white;
     margin-bottom: 32px;

@@ -18,3 +18,8 @@ body {
 .section {
   flex: 1 0 auto;
 }
+
+.scroll-disable {
+  height: 100%;
+  overflow-y: hidden;
+}

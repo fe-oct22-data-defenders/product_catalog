@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useEffect } from 'react';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { PageNavLink } from './PageNavLink/PageNavLink';
@@ -45,6 +45,14 @@ export const Navbar: FC<Props> = memo(({
   cartItemsNum,
   favoriteItemsNum,
 }) => {
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('scroll-disable');
+    } else {
+      document.body.classList.remove('scroll-disable');
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
       <nav className="navbar">
