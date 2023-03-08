@@ -24,7 +24,7 @@ export const PurchaseModal: React.FC<Props> = ({ onClose }) => {
     if (timeLeft === 0) {
       clearInterval(timer);
       window.location.replace(
-        'https://fe-oct22-data-defenders.github.io/product_catalog/#/',
+        '/home',
       );
     }
 
