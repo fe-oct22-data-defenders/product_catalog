@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.c66d6c46.css",
-    "main.js": "./static/js/main.3864131b.js",
+    "main.css": "./static/css/main.527dfbb5.css",
+    "main.js": "./static/js/main.1623ec76.js",
     "static/media/logo.svg": "./static/media/logo.2d31127e860b19bd1dedf63df53a0b06.svg",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -12,6 +12,7 @@
     "static/media/shopcart.svg": "./static/media/shopcart.c6fae82331d2a1c4adc3ba6f43f6f325.svg",
     "static/media/heart.svg": "./static/media/heart.c941c4e177d6356f81fcee90081abf03.svg",
     "static/media/Home.svg": "./static/media/Home.901f72c9436f9e8c63573838c422c80d.svg",
+    "static/media/heart-icon-added.svg": "./static/media/heart-icon-added.a50cb178e4751a64f215.svg",
     "index.html": "./index.html",
     "static/media/cross.svg": "./static/media/cross.3feccb3efb8d52eb7a6c.svg",
     "static/media/crosshov.svg": "./static/media/crosshov.911c2c686f56c2943d2c.svg",
@@ -24,11 +25,11 @@
     "static/media/back-button.svg": "./static/media/back-button.4a750d9ba7eef45d57ab.svg",
     "static/media/minus.svg": "./static/media/minus.c6e118487bc364ed13cf.svg",
     "static/media/minusact.svg": "./static/media/minusact.0365a13e7f5baa53bce8.svg",
-    "main.c66d6c46.css.map": "./static/css/main.c66d6c46.css.map",
-    "main.3864131b.js.map": "./static/js/main.3864131b.js.map"
+    "main.527dfbb5.css.map": "./static/css/main.527dfbb5.css.map",
+    "main.1623ec76.js.map": "./static/js/main.1623ec76.js.map"
   },
   "entrypoints": [
-    "static/css/main.c66d6c46.css",
-    "static/js/main.3864131b.js"
+    "static/css/main.527dfbb5.css",
+    "static/js/main.1623ec76.js"
   ]
 }
