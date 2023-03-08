@@ -77,12 +77,25 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
 
   function removeFromLocalStorage(
     key: string,
-    removingElId: string,
+    removingElId: string | undefined,
     clearCompletely = false,
   ) {
     const stringStorage = localStorage.getItem(key);
 
     let storage = stringStorage ? JSON.parse(stringStorage) : [];
+
+    if (!removingElId) {
+      localStorage.setItem(key, '[]');
+
+      const event: any = new Event('storage');
+
+      event.key = key;
+      event.body = storage;
+
+      window.dispatchEvent(event);
+
+      return;
+    }
 
     const exsistingProduct = storage.find(
       (el: { id: string }) => el.id === removingElId,
