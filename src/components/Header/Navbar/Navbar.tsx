@@ -31,13 +31,19 @@ const navLinks: NavLinkType[] = [
   },
 ];
 
-export const Navbar: FC<Props> = memo(({ cartItemsNum, favoriteItemsNum }) => {
 interface Props {
+  cartItemsNum:number;
+  favoriteItemsNum: number;
   isMenuOpen: boolean;
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
+export const Navbar: FC<Props> = memo(({
+  isMenuOpen,
+  setMenuOpen,
+  cartItemsNum,
+  favoriteItemsNum,
+}) => {
   return (
     <>
       <nav className="navbar">
@@ -75,9 +81,9 @@ export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
             onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-img"
+              className="navbar__shopcard-control-img navbar__icon"
               src={heartLikeIcon}
-              alt="favorites" className="navbar__icon"
+              alt="favorites"
             />
             {favoriteItemsNum !== 0 && (
               <div className="navbar__icon-number">
@@ -101,9 +107,9 @@ export const Navbar: FC<Props> = memo(({ isMenuOpen, setMenuOpen }) => {
             onClick={() => setMenuOpen(false)}
           >
             <img
-              className="navbar__shopcard-control-img"
+              className="navbar__shopcard-control-img navbar__icon"
               src={shoppingBagIcon}
-              alt="card" className="navbar__icon"
+              alt="card"
             />
             {cartItemsNum !== 0 && (
               <div className="navbar__icon-number">

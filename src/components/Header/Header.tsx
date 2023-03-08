@@ -21,7 +21,12 @@ export const Header: FC = () => {
     })}
     >
       <Logo />
-      <Navbar cartItemsNum={cartItemsNum} favoriteItemsNum={favoriteItemsNum} isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+      <Navbar
+        cartItemsNum={cartItemsNum}
+        favoriteItemsNum={favoriteItemsNum}
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+      />
     </header>
   );
 };
