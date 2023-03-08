@@ -23,7 +23,7 @@ export const PurchaseModal: React.FC<Props> = ({ onClose }) => {
 
     if (timeLeft === 0) {
       clearInterval(timer);
-      window.location.replace('product_catalog/#/');
+      window.location.replace('/#/');
     }
 
     return () => clearInterval(timer);
