@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.527dfbb5.css",
-    "main.js": "./static/js/main.1623ec76.js",
+    "main.css": "./static/css/main.31a1f05d.css",
+    "main.js": "./static/js/main.a79d5e76.js",
     "static/media/logo.svg": "./static/media/logo.2d31127e860b19bd1dedf63df53a0b06.svg",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -20,16 +20,18 @@
     "static/media/menu.svg": "./static/media/menu.571b3bb49f127bd00746aadd1561e16f.svg",
     "static/media/plus.svg": "./static/media/plus.281bb597ffb6205d92c0.svg",
     "static/media/arrow.svg": "./static/media/arrow.90170297dda7672a6426d53912c6c3b8.svg",
+    "static/media/slider-button.svg": "./static/media/slider-button.74c70bc30a28006d380b.svg",
     "static/media/Vector.svg": "./static/media/Vector.bbf35a32db574018a54e.svg",
+    "static/media/slider-disabled.svg": "./static/media/slider-disabled.d99087c8e9c129fb3479.svg",
     "static/media/goBack.svg": "./static/media/goBack.4dc386686e1f77999a38.svg",
     "static/media/back-button.svg": "./static/media/back-button.4a750d9ba7eef45d57ab.svg",
     "static/media/minus.svg": "./static/media/minus.c6e118487bc364ed13cf.svg",
     "static/media/minusact.svg": "./static/media/minusact.0365a13e7f5baa53bce8.svg",
-    "main.527dfbb5.css.map": "./static/css/main.527dfbb5.css.map",
-    "main.1623ec76.js.map": "./static/js/main.1623ec76.js.map"
+    "main.31a1f05d.css.map": "./static/css/main.31a1f05d.css.map",
+    "main.a79d5e76.js.map": "./static/js/main.a79d5e76.js.map"
   },
   "entrypoints": [
-    "static/css/main.527dfbb5.css",
-    "static/js/main.1623ec76.js"
+    "static/css/main.31a1f05d.css",
+    "static/js/main.a79d5e76.js"
   ]
 }
