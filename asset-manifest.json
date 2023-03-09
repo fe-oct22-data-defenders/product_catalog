@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.cdacf1ff.css",
-    "main.js": "./static/js/main.bc178dff.js",
+    "main.css": "./static/css/main.3dfd5238.css",
+    "main.js": "./static/js/main.2c0d1d9a.js",
+    "static/media/banner-tablets.png": "./static/media/banner-tablets.6d1de6e1e88c2e2f878d.png",
+    "static/media/category-accessories.png": "./static/media/category-accessories.3776371c930055563bc2.png",
+    "static/media/banner-phones.png": "./static/media/banner-phones.b4eeda8bd82b712057a2.png",
     "static/media/logo.svg": "./static/media/logo.2d31127e860b19bd1dedf63df53a0b06.svg",
     "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/main-banner.jpg": "./static/media/main-banner.111a97196de841f63ea3.jpg",
     "static/media/Accessories.jpg": "./static/media/Accessories.fcfc0e03193ac666740c.jpg",
     "static/media/Tablets.jpg": "./static/media/Tablets.d957097486f751a6267a.jpg",
+    "static/media/small-baner.png": "./static/media/small-baner.efbec9e7fa491a9a8b7b.png",
     "static/media/Phones.jpg": "./static/media/Phones.2465e195026c04f0de8a.jpg",
     "static/media/shopcart.svg": "./static/media/shopcart.c6fae82331d2a1c4adc3ba6f43f6f325.svg",
     "static/media/heart.svg": "./static/media/heart.c941c4e177d6356f81fcee90081abf03.svg",
@@ -27,11 +32,11 @@
     "static/media/back-button.svg": "./static/media/back-button.4a750d9ba7eef45d57ab.svg",
     "static/media/minus.svg": "./static/media/minus.c6e118487bc364ed13cf.svg",
     "static/media/minusact.svg": "./static/media/minusact.0365a13e7f5baa53bce8.svg",
-    "main.cdacf1ff.css.map": "./static/css/main.cdacf1ff.css.map",
-    "main.bc178dff.js.map": "./static/js/main.bc178dff.js.map"
+    "main.3dfd5238.css.map": "./static/css/main.3dfd5238.css.map",
+    "main.2c0d1d9a.js.map": "./static/js/main.2c0d1d9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdacf1ff.css",
-    "static/js/main.bc178dff.js"
+    "static/css/main.3dfd5238.css",
+    "static/js/main.2c0d1d9a.js"
   ]
 }
