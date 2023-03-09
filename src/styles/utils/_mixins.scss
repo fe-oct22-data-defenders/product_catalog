@@ -10,8 +10,20 @@
   }
 }
 
+@mixin onSmallDesktop {
+  @media (min-width:1024px) {
+    @content;
+  }
+}
+
 @mixin onWideTablet {
   @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onMediumPhone {
+  @media (min-width: 480px) {
     @content;
   }
 }

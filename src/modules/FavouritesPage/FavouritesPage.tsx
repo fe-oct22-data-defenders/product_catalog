@@ -9,25 +9,27 @@ export const FavouritesPage: React.FC = memo(() => {
   const [, favorites] = useLocalStorage();
 
   return (
-    <section className="favourites-page">
-      <div className="favourites-page__homebutton-wrapper">
-        <HomeButton text="Favourites" />
-      </div>
-      <h1 className="favourites-page__title">Favourites</h1>
-      {favorites.length !== 0 && (
-        <>
-          <p className="favourites-page__subtitle">{`${favorites.length} models`}</p>
-          <div className="catalog">
-            <ProductCatalog phones={favorites} />
-          </div>
-        </>
-      )}
+    <div className="container">
+      <section className="favourites-page">
+        <div className="favourites-page__homebutton-wrapper">
+          <HomeButton text="Favourites" />
+        </div>
+        <h1 className="favourites-page__title">Favourites</h1>
+        {favorites.length !== 0 && (
+          <>
+            <p className="favourites-page__subtitle">{`${favorites.length} models`}</p>
+            <div className="catalog">
+              <ProductCatalog phones={favorites} />
+            </div>
+          </>
+        )}
 
-      {favorites.length === 0 && (
-        <p className="favourites-page__no-items">
-          You do not have any favourite product yet
-        </p>
-      )}
-    </section>
+        {favorites.length === 0 && (
+          <p className="favourites-page__no-items">
+            You do not have any favourite product yet
+          </p>
+        )}
+      </section>
+    </div>
   );
 });
