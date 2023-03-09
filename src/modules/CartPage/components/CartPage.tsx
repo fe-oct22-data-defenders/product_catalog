@@ -36,53 +36,6 @@ export const CartPage: React.FC = memo(() => {
   ), 0);
 
   return (
-    <>
-      <section className="cart-page">
-        <div className="cart-page__back-button"><ButtonBack /></div>
-        <h1 className="cart-page__title">Cart</h1>
-        {itemsNum !== 0 && (
-          <div className="grid">
-            <div className="
-              grid__item
-              grid__item--1-4
-              grid__item--tablet-1-12
-              grid__item--desktop-1-16"
-            >
-              {cart.map(phone => (
-                <CartItem
-                  key={phone.id}
-                  phone={phone}
-                />
-              ))}
-            </div>
-            <div
-              className="
-                grid__item
-                grid__item--1-4
-                grid__item--tablet-1-12
-                grid__item--desktop-17-24"
-            >
-              <div className="checkout">
-                <div className="checkout-price">{`$${productsTotal}`}</div>
-                <div className="checkout-subtitle">{`Total for ${itemsNum} items`}</div>
-                <ButtonAccent
-                  classNameButton="checkout-button"
-                  text="Checkout"
-                  onClick={() => toggleModal()}
-                />
-              </div>
-            </div>
-          </div>
-        )}
-
-        {itemsNum === 0 && (
-          <p className="cart-page__without-product">
-            You have not chosen product yet
-          </p>
-        )}
-      </section>
-
-      {isModalOpen && <PurchaseModal onClose={toggleModal} />}
-    </>
+    <ButtonBack />
   );
 });

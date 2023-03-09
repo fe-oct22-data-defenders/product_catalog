@@ -5,6 +5,8 @@ import { SecondSlider } from '../../../components/SecondSlider';
 import { Phone } from '../../../types/Phone';
 import './HomePage.scss';
 
+import 'swiper/css';
+
 export const HomePage: React.FC = memo(() => {
   const [newestPhones, setNewestPhones] = useState<Phone[]>([]);
   const [hotPricesPhones, setHotPricesPhones] = useState<Phone[]>([]);
@@ -28,7 +30,9 @@ export const HomePage: React.FC = memo(() => {
 
   return (
     <section className="home-page">
-      <h1 className="home-page__title">Welcome to Nice Gadgets store!</h1>
+      <>
+    <h1 className="home-page__title">Welcome to Nice Gadgets store!</h1>
+  </>
       <div className="home-page__section">
         <SecondSlider
           phones={newestPhones}
