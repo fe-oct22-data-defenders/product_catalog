@@ -27,7 +27,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     min-width: 100%;
 
     @include onTablet {
@@ -35,12 +34,23 @@
       min-width: 220px;
       gap: 24px;
     }
+
+    &-top {
+      justify-content: flex-start;
+    }
+
+    &-bottom{
+      justify-content: space-between;
+    }
   }
 
   &__img {
     display: block;
     height: 66px;
     width: 66px;
+    object-fit: scale-down;
+    margin-right: 25px;
+
 
     @include onTablet {
       height: 100%;
@@ -54,7 +64,11 @@
     background-color: $surface1;
     background-image: url(../../public/img/cartitem/cross.svg);
     background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
     cursor: pointer;
+    margin-right: 23px;
+    margin-left: 8px;
 
     &:hover {
       background-image: url(../../public/img/cartitem/crosshov.svg);
@@ -69,8 +83,7 @@
     color: $white;
     text-decoration: none;
     text-align: left;
-    word-break: break-all;
-    margin-bottom: 8px;
+    word-break: break-word;
   }
 
   &__price {
