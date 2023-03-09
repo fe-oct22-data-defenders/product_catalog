@@ -8,12 +8,14 @@ type Props = {
   phone: Phone,
   isInCart: boolean;
   isInFavorites: boolean;
+  style?: {},
 };
 
 export const ProductCard: FC<Props> = ({
   phone,
   isInCart,
   isInFavorites,
+  style,
 }) => {
   const [, , addToLocalStorage, removeFromLocalStorage] = useLocalStorage();
 
@@ -23,7 +25,7 @@ export const ProductCard: FC<Props> = ({
   });
 
   return (
-    <article className="phone">
+    <article className="phone" style={style}>
       <img
         src={phone.image}
         alt={phone.name}

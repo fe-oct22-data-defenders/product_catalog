@@ -14,3 +14,15 @@ export function getPhones(
     .get(`/products?page=${page}&perPage=${perPage}&sortBy=${sortBy}`)
     .then((res) => res.data);
 }
+
+export function getNewestPhones(): Promise<PhonesResponse> {
+  return axios
+    .get('/products/new')
+    .then((res) => res.data);
+}
+
+export function getCheapestPhones(): Promise<PhonesResponse> {
+  return axios
+    .get('/products/discount')
+    .then((res) => res.data);
+}

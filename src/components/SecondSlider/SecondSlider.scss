@@ -1,0 +1,89 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
+
+.SecondSlider {
+  &__swiper-container {
+    position: relative;
+  }
+
+  &__swiper {
+    padding-top: 86px;
+  }
+
+  &__swiper-prev-button {
+    background-image: url('../../public/slider-buttons/slider-button.svg');
+    transform: rotate(180deg);
+  }
+
+  &__swiper-next-button {
+    background-image: url('../../public/slider-buttons/slider-button.svg');
+  }
+
+  &__swiper-title {
+    padding-right: 50px;
+    font-family: Mont-Bold, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    color: $white;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__swiper-manipulation {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.SecondSlider__swiper-prev-button,
+.SecondSlider__swiper-next-button {
+  box-sizing: border-box;
+  background-color: $surface2;
+  width: 32px;
+  height: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid transparent;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $icons;
+  }
+}
+
+.swiper-button-disabled {
+  border-color: #3B3E4A;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.SecondSlider__swiper-next-button 
+.SecondSlider__swiper-next-button.swiper-button-disabled {
+  background-image: url('../../public/slider-buttons/slider-disabled.svg');
+  transform: rotate(180deg);
+}
+
+.SecondSlider__swiper-prev-button.swiper-button-disabled {
+  background-image: url('../../public/slider-buttons/slider-disabled.svg');
+  transform: rotate(0);
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
+}
+
