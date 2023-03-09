@@ -2,23 +2,19 @@
 @import '../../styles/utils/vars';
 
 .categories {
-  margin: 0 auto 56px;
-
-  @include onWideTablet {
-    margin-bottom: 64px;
-  }
-
-  @include onTablet {
-    margin-bottom: 80px;
-  }
+  font-family: Mont-Bold, sans-serif;
 
   &__title {
     margin: 0 0 24px;
-
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
     color: $white;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+    }
   }
 
   &__item {

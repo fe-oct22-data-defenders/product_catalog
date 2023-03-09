@@ -29,9 +29,25 @@ export const HomePage: React.FC = memo(() => {
   return (
     <section className="home-page">
       <h1 className="home-page__title">Welcome to Nice Gadgets store!</h1>
-      <Categories />
-      <SecondSlider phones={newestPhones} text="Brand new models" />
-      <SecondSlider phones={hotPricesPhones} text="Hot prices" />
+      <div className="home-page__section">
+        <SecondSlider
+          phones={newestPhones}
+          text="Brand new models"
+          sliderClass="New"
+        />
+      </div>
+
+      <div className="home-page__section">
+        <Categories />
+      </div>
+
+      <div className="home-page__section">
+        <SecondSlider
+          phones={hotPricesPhones}
+          text="Hot prices"
+          sliderClass="Discount"
+        />
+      </div>
     </section>
   );
 });

@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
-  Pagination, Navigation, Autoplay,
+  Navigation, Autoplay,
 } from 'swiper';
 
 import 'swiper/css';
@@ -16,9 +16,10 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 type Props = {
   phones: Phone[],
   text: string,
+  sliderClass: string,
 };
 
-export const SecondSlider: FC<Props> = ({ phones, text }) => {
+export const SecondSlider: FC<Props> = ({ phones, text, sliderClass }) => {
   const [isFullScreen, setIsFullScreen] = useState<boolean>(
     document.fullscreenElement !== null,
   );
@@ -75,15 +76,7 @@ export const SecondSlider: FC<Props> = ({ phones, text }) => {
   return (
     <div className="SecondSlider__swiper-container">
       <Swiper
-        pagination={{
-          el: '.SecondSlider__swiper-pagination',
-          clickable: true,
-          dynamicBullets: true,
-          renderBullet(index, className) {
-            return `<span class="${className}">${index + 1}</span>`;
-          },
-          hideOnClick: true,
-        }}
+        key={text}
         coverflowEffect={{
           rotate: 100,
           stretch: 5,
@@ -94,10 +87,10 @@ export const SecondSlider: FC<Props> = ({ phones, text }) => {
         autoplay
         speed={1000}
         navigation={{
-          nextEl: '.SecondSlider__swiper-next-button',
-          prevEl: '.SecondSlider__swiper-prev-button',
+          nextEl: `.${sliderClass}__swiper-next-button`,
+          prevEl: `.${sliderClass}__swiper-prev-button`,
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Navigation, Autoplay]}
         className="SecondSlider__swiper"
         tag="section"
         wrapperTag="ul"
@@ -128,8 +121,8 @@ export const SecondSlider: FC<Props> = ({ phones, text }) => {
       <div className="SecondSlider__swiper-manipulation">
         <h3 className="SecondSlider__swiper-title">{text}</h3>
         <div className="button-container">
-          <div className="SecondSlider__swiper-prev-button" />
-          <div className="SecondSlider__swiper-next-button" />
+          <div className={`SecondSlider__swiper-prev-button ${sliderClass}__swiper-prev-button`} />
+          <div className={`SecondSlider__swiper-next-button ${sliderClass}__swiper-next-button`} />
         </div>
       </div>
     </div>
