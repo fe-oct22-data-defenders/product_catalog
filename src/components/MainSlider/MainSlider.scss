@@ -1,0 +1,99 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
+
+.MainSlider-container {
+  position: relative;
+}
+
+.MainSlider {
+  max-width: 1040px;
+
+  @include onTablet {
+    margin: 0 48px;
+  }
+
+  &__button {
+    visibility: hidden;
+    position: absolute;
+    width: 32px;
+    background-color: $surface2;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $icons;
+    }
+
+    @include onTablet {
+      visibility: visible;
+      height: 200px;
+    }
+
+    @include onWideTablet {
+      height: 300px;
+    }
+
+    @include onSmallDesktop {
+      height: 400px;
+    }
+  }
+
+  &__pagination {
+    width: max-content !important;
+    margin: 18px auto !important;
+
+    & span {
+      width: 14px;
+      height: 4px;
+      background-color: $white;
+      border-radius: unset;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    overflow: hidden;
+    height: 320px;
+
+    @include onMediumPhone {
+      height: 400px;
+    }
+    
+
+    @include onTablet {
+      height: 200px;
+    }
+
+
+    @include onWideTablet {
+      height: 300px;
+    }
+
+    @include onSmallDesktop {
+      height: 400px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    @include onSmallDesktop {
+      height: 100%;
+    }
+  }
+
+  &__prev-button {
+    top: 0;
+    left: 0;
+    background-image: url('../../public/slider-buttons/slider-button.svg');
+    transform: rotate(180deg);
+  }
+
+  &__next-button {
+    top: 0;
+    right: 0;
+    background-image: url('../../public/slider-buttons/slider-button.svg');
+  }
+}

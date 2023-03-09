@@ -36,7 +36,7 @@ export const CartPage: React.FC = memo(() => {
   ), 0);
 
   return (
-    <>
+    <div className="container">
       <section className="cart-page">
         <div className="cart-page__back-button"><ButtonBack /></div>
         <h1 className="cart-page__title">Cart</h1>
@@ -83,6 +83,6 @@ export const CartPage: React.FC = memo(() => {
       </section>
 
       {isModalOpen && <PurchaseModal onClose={toggleModal} />}
-    </>
+    </div>
   );
 });
