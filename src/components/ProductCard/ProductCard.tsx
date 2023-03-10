@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Phone } from '../../types/Phone';
 import { ButtonAccent } from '../ButtonAccent/ButtonAccent';
@@ -33,12 +34,12 @@ export const ProductCard: FC<Props> = ({
       />
 
       <h2 className="phone__name">
-        <a
-          href="/"
+        <Link
+          to="apple-iphone-11-pro-max"
           className="phone__name--link"
         >
           {`${phone.name} (iMT9G2FS/A)`}
-        </a>
+        </Link>
       </h2>
 
       <div className="phone__price">
