@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
+import { FullPhone } from '../types/FullPhone';
 import { PhonesResponse } from '../types/PhonesResponse';
 
 // eslint-disable-next-line max-len
@@ -13,6 +14,10 @@ export function getPhones(
   return axios
     .get(`/products?page=${page}&perPage=${perPage}&sortBy=${sortBy}`)
     .then((res) => res.data);
+}
+
+export function getOne(phoneId: string): Promise<FullPhone> {
+  return axios.get(`/products/${phoneId}`).then((res) => res.data);
 }
 
 export function getNewestPhones(): Promise<PhonesResponse> {

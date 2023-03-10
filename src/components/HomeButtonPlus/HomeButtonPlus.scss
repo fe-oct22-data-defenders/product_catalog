@@ -1,0 +1,34 @@
+@import '../../styles/utils/vars';
+
+.home-button {
+  display: flex;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  align-items: center;
+  color: $secondary;
+
+  &__link {
+    display: block;
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__arrow {
+    display: block;
+  }
+
+  &__category {
+    display: block;
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__text {
+    display: block;
+    transform: translateY(1px);
+  }
+}

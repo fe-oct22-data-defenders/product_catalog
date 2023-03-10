@@ -1,0 +1,240 @@
+@import "../../../styles/utils/mixins";
+@import "../../../styles/utils/vars";
+
+.button-home {
+  margin-top: 24px;
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 41px;
+  }
+}
+
+.back-button {
+  margin-bottom: 16px;
+}
+
+.product__item {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 80px;
+  }
+
+  &-title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    color: $white;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    @include onDesktop {
+      justify-content: start;
+    }
+  }
+
+  &-photos {
+    display: block;
+    height: 275px;
+    margin: 0 auto 24px;
+
+    @include onDesktop {
+      height: 442px;
+    }
+  }
+
+  &__options {
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 8px;
+
+      &-available {
+        display: block;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: $secondary;
+      }
+
+      &-id {
+        display: block;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: $icons;
+      }
+    }
+
+    &__colors {
+      display: flex;
+      gap: 8px;
+
+      padding-bottom: 24px;
+
+      border-bottom: 1px solid $elements;
+
+      margin-bottom: 24px;
+    }
+
+    &__capacity {
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid $elements;
+
+      &-title {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: $secondary;
+        margin-bottom: 8px;
+      }
+
+      &-btn-def {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        width: 56px;
+        height: 32px;
+
+        text-align: center;
+
+        color: #0F1121;
+        margin-right: 8px;
+      }
+
+      &-btn{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        width: 56px;
+        height: 32px;
+
+        text-align: center;
+
+        color: $white;
+        background-color: $black;
+        border: 1px solid #4A4D58;
+        margin-right: 8px;
+      }
+    }
+
+    &__order {
+      margin-bottom: 32px;
+
+      &-price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-bottom: 23px;
+
+        &--new {
+          font-weight: 800;
+          font-size: 32px;
+          line-height: 41px;
+
+          letter-spacing: -0.01em;
+
+          color: $white;
+        }
+
+        &--old {
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 28px;
+          color: $secondary;
+        }
+      }
+    }
+
+    &-details {
+      margin-bottom: 56px;
+
+      &-one {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &-key {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 15px;
+          color: $secondary;
+        }
+
+        &-values {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 15px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid $elements;
+
+    margin-bottom: 32px;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__par {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+    margin-bottom: 32px;
+  }
+}
+
+.page-wrapper {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+  @include onDesktop {
+    margin-bottom: 81px;
+  }
+}

@@ -7,6 +7,7 @@ import { NotFoundPage } from './modules/NotFoundPage';
 import { HomePage } from './modules/HomePage/components/HomePage';
 import { FavouritesPage } from './modules/FavouritesPage';
 import { CartPage } from './modules/CartPage/components/CartPage';
+import { ProductPage } from './modules/ProductPage/components';
 import './App.scss';
 
 export const App: FC = () => {
@@ -17,11 +18,12 @@ export const App: FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
-          <Route path="phones" element={<CatalogPage />}>
-            <Route path=":phoneId" element={<h1>Item card</h1>} />
+          <Route path="phones">
+            <Route index element={<CatalogPage />} />
+            <Route path="apple-iphone-11-pro-max" element={<ProductPage />} />
           </Route>
-          <Route path="tablets" element={<h1>Tablets</h1>} />
-          <Route path="accessories" element={<h1>Accessories</h1>} />
+          <Route path="tablets" element={<NotFoundPage />} />
+          <Route path="accessories" element={<NotFoundPage />} />
           <Route path="favorites" element={<FavouritesPage />} />
           <Route path="card" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />

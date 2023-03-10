@@ -24,7 +24,7 @@ export const Footer: React.FC = () => (
         <li className="footer__nav__item">
           <a
             className="footer__nav__link"
-            href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
+            href="https://github.com/fe-oct22-data-defenders/product_catalog"
             target="_blank"
             rel="noreferrer"
           >
