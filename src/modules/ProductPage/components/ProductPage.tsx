@@ -2,6 +2,8 @@
 import React, {
   FC,
   memo,
+  useEffect,
+  useState,
 } from 'react';
 import { ButtonAccent } from '../../../components/ButtonAccent/ButtonAccent';
 import { ButtonBack } from '../../../components/ButtonBack/ButtonBack';
@@ -14,8 +16,32 @@ import col3 from '../../../public/img/productItem/color3.svg';
 import col4 from '../../../public/img/productItem/color4.svg';
 // import ph from '../../../public/img/productItem/Previews.svg';
 import ph1 from '../../../public/img/productItem/Photo.svg';
+import { SecondSlider } from '../../../components/SecondSlider';
+import { getNewestPhones } from '../../../api/phones';
+import { Phone } from '../../../types/Phone';
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 
 export const ProductPage: FC = memo(() => {
+  const [newestPhones, setNewestPhones] = useState<Phone[]>([]);
+  const [, favourites] = useLocalStorage();
+  const id = 'apple-iphone-11-pro-max-64gb-gold';
+  const isInFavorites = favourites.find(phone => phone.phoneId === id);
+
+  const loadGoods = async () => {
+    try {
+      const newest = await getNewestPhones();
+
+      setNewestPhones(newest.data);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    loadGoods();
+  }, []);
+
   return (
     <div className="container">
       <section className="product-page">
@@ -102,7 +128,7 @@ export const ProductPage: FC = memo(() => {
                     text="Add to card"
                     onClick={() => { }}
                   />
-                  <ButtonFavourite isInFavorites />
+                  <ButtonFavourite phone={isInFavorites} isInFavorites={Boolean(isInFavorites)} />
                 </div>
               </div>
               <div className="product__item__options-details">
@@ -301,6 +327,9 @@ export const ProductPage: FC = memo(() => {
             </div>
           </div>
         </article>
+        <div className="page-wrapper">
+          <SecondSlider phones={newestPhones} text="You may also like" sliderClass="phone-recommend" />
+        </div>
       </section>
     </div>
   );

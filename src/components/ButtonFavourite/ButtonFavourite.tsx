@@ -4,7 +4,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone: Phone
+  phone: Phone | undefined,
   isInFavorites: boolean,
 };
 
@@ -23,7 +23,7 @@ export const ButtonFavourite: FC<Props> = ({
         { 'button-favourite--added': isInFavorites },
       )}
       onClick={isInFavorites
-        ? () => removeFromLocalStorage('favorites', phone.id, true)
+        ? () => removeFromLocalStorage('favorites', phone?.id, true)
         : () => addToLocalStorage('favorites', phone)}
     />
   );

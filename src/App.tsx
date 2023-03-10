@@ -19,7 +19,7 @@ export const App: FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="phones">
-              <Route index element={<CatalogPage />} />
+            <Route index element={<CatalogPage />} />
             <Route path="apple-iphone-11-pro-max" element={<ProductPage />} />
           </Route>
           <Route path="tablets" element={<NotFoundPage />} />

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Phone } from '../types/Phone';
 
-export type AddFunction = (key: string, value: Phone) => void;
+export type AddFunction = (key: string, value: Phone | undefined) => void;
 export type RemoveFunction = (
   key: string,
   removingElId: string | undefined,
@@ -50,13 +50,13 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
   }, []);
 
   // eslint-disable-next-line consistent-return
-  function addToLocalStorage(key: string, value: Phone): void {
+  function addToLocalStorage(key: string, value: Phone | undefined): void {
     const stringStorage = localStorage.getItem(key);
 
     const storage = stringStorage ? JSON.parse(stringStorage) : [];
 
     const exsistingProduct = storage.find(
-      (el: { id: string }) => el.id === value.id,
+      (el: { id: string }) => el.id === value?.id,
     );
 
     switch (key) {
