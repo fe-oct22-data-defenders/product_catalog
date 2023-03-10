@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Nice Gadgets store
+[DEMO](https://fe-oct22-data-defenders.github.io/product_catalog/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General Info
+Trainee project "Nice Gadgets" one of the examples of excellent teamwork. We were working about realization of ganget store and used such technologies us React and related for Frontend, and Node.js PostgreSQL and others for Backend. All technologies and functionality are described below
 
-## Available Scripts
+## Technology we use:
+* HTML5
+* CSS3
+* SCSS
+* JS
+* TS
+* React
+* BEM
+* CliclUp
+* PostgreSQL
+* Railway.app
+* Node.js
 
-In the project directory, you can run:
+### HTML5/CSS3
+Used to build fully adaptive design and semantically correct pages
+### SCSS
+Used for increasing the abstraction level of code and simplifying or optimize CSS.
+### JS
+Used to build the frontend logic
+### TS
+User for type JS,to catch errors early in your project, and to make code more safer.
+### React
+React offers effective and fast updating of the page, uses a component approach, the library is clear and comfortable in development. Also, 
+React will efficiently update and render just the right components when your data changes. That іs why we decided that it is the best solution to use this library :)
+### ClickUp
+The best way to organize your time management
+### PostgreSQL
+To store our data we use PostgreSQL
+### Railway.app
+We uploaded our API server to it along with PostgreSQL.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About our project:
++ automated sliders
++ fully implemented navigation
++ user can add and remove goods from the basket
++ user can mark your favorite products and add them to a separate page
++ calculation of the total price in the basket
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+###
+Thaks for reading!
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
