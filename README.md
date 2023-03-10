@@ -1,6 +1,9 @@
 # Nice Gadgets store
 [DEMO](https://fe-oct22-data-defenders.github.io/product_catalog/)
 
+## General Info
+Trainee project "Nice Gadgets" one of the examples of excellent teamwork. We were working about realization of ganget store and used such technologies us React and related for Frontend, and Node.js PostgreSQL and others for Backend. All technologies and functionality are described below
+
 ## Technology we use:
 * HTML5
 * CSS3
@@ -13,9 +16,6 @@
 * PostgreSQL
 * Railway.app
 * Node.js
-
-## General Info
-Trainee project "Nice Gadgets" one of the examples of excellent teamwork. We were working about realization of ganget store and used such technologies us React and related for Frontend, and Node.js PostgreSQL and others for Backend. All technologies and functionality are described below
 
 ### HTML5/CSS3
 Used to build fully adaptive design and semantically correct pages
