@@ -8,12 +8,9 @@
   border-bottom: 1px solid $surface2;
   padding-left: 16px;
   flex: 0 0 auto;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 2;
-
-  @include onTablet {
-    position: static;
-  }
 
   @include onDesktop {
     padding-left: 24px;
