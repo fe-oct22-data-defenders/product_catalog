@@ -26,6 +26,10 @@ export const CartPage: React.FC = memo(() => {
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const productsTotal = cart.reduce(
     (total, product) => total + product.price * (product.counter || 1),
     0,

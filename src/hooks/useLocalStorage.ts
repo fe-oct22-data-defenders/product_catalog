@@ -98,7 +98,6 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
     clearCompletely = false,
   ) {
     const stringStorage = localStorage.getItem(key);
-
     let storage = stringStorage ? JSON.parse(stringStorage) : [];
 
     if (!removingElId) {
@@ -125,9 +124,17 @@ export const useLocalStorage: FunctionUseLocaleStorage = () => {
       return;
     }
 
-    storage = storage.filter(
-      (el: { id: string }) => el.id !== removingElId,
-    );
+    if (clearCompletely === false) {
+      storage = storage
+        .map((el: { id: string; counter: number }) => (
+          el.id === removingElId && el.counter > 1
+            ? { ...el, counter: el.counter - 1 }
+            : el));
+    } else {
+      storage = storage.filter(
+        (el: { id: string }) => el.id !== removingElId,
+      );
+    }
 
     localStorage.setItem(key, JSON.stringify(storage));
 

@@ -1,0 +1,21 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
+
+.spec-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-family: Mont-Regular, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  &__title {
+    color: $secondary;
+  }
+  
+  &__value {
+    color: $white;
+  }
+}
+

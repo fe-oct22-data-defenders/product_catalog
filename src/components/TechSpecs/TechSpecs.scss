@@ -1,0 +1,19 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
+
+.tech-specs {
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+    color: $white;
+    font-family: Mont-Bold, sans-serif;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $elements;
+    margin-bottom: 32px;
+  }
+
+  &__details {
+    margin-bottom: 56px;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { HomeButton } from '../../components/HomeButton';
 // eslint-disable-next-line max-len
 import { ProductCatalog } from '../../components/ProductCatalog/ProductCatalog';
@@ -7,6 +7,10 @@ import './FavouritesPage.scss';
 
 export const FavouritesPage: React.FC = memo(() => {
   const [, favorites] = useLocalStorage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container">

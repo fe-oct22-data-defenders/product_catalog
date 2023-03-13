@@ -1,0 +1,32 @@
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/vars";
+
+.about {
+  font-family: Mont-Regular, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+    color: $white;
+    font-family: Mont-Bold, sans-serif;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $elements;
+    margin-bottom: 32px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__par {
+    color: $secondary;
+    margin-bottom: 32px;
+  }
+}

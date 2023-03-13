@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 import { FullPhone } from '../types/FullPhone';
+import { Phone } from '../types/Phone';
 import { PhonesResponse } from '../types/PhonesResponse';
 
 // eslint-disable-next-line max-len
@@ -16,7 +17,12 @@ export function getPhones(
     .then((res) => res.data);
 }
 
-export function getOne(phoneId: string): Promise<FullPhone> {
+interface GetOneResult {
+  longData: FullPhone,
+  shortData: Phone,
+}
+
+export function getOne(phoneId: string): Promise<GetOneResult> {
   return axios.get(`/products/${phoneId}`).then((res) => res.data);
 }
 
