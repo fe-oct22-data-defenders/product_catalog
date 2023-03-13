@@ -1,19 +1,19 @@
 /* eslint-disable max-len */
 import React, { memo, useEffect, useState } from 'react';
-import { getCheapestPhones, getNewestPhones } from '../../../api/phones';
-import { Categories } from '../../../components/Categories';
-import { MainSlider } from '../../../components/MainSlider';
-import { SecondSlider } from '../../../components/SecondSlider';
-import { Phone } from '../../../types/Phone';
+import { getCheapestPhones, getNewestPhones } from '../../api/phones';
+import { Categories } from '../../components/Categories';
+import { MainSlider } from '../../components/MainSlider';
+import { SecondSlider } from '../../components/SecondSlider';
+import { Phone } from '../../types/Phone';
 import './HomePage.scss';
 
-import mainBaner from '../../../public/img/swiper-banners/main-banner.jpg';
-import phonesBaner from '../../../public/img/swiper-banners/banner-phones.png';
+import mainBaner from '../../public/img/swiper-banners/main-banner.jpg';
+import phonesBaner from '../../public/img/swiper-banners/banner-phones.png';
 // eslint-disable-next-line max-len
-import tabletsBaner from '../../../public/img/swiper-banners/banner-tablets.png';
+import tabletsBaner from '../../public/img/swiper-banners/banner-tablets.png';
 // eslint-disable-next-line max-len
-import accessoriesBaner from '../../../public/img/swiper-banners/category-accessories.png';
-import smallBaner from '../../../public/img/swiper-banners/small-baner.png';
+import accessoriesBaner from '../../public/img/swiper-banners/category-accessories.png';
+import smallBaner from '../../public/img/swiper-banners/small-baner.png';
 
 const phonesForBigScreens = [mainBaner, phonesBaner, tabletsBaner, accessoriesBaner];
 const phonesForSmallScreens = [smallBaner, smallBaner, smallBaner, smallBaner];
@@ -43,6 +43,7 @@ export const HomePage: React.FC = memo(() => {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener('resize', handleResize);
     document.addEventListener('fullscreenchange', handleFullScreenChange);
 

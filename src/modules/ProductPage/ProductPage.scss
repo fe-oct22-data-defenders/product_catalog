@@ -1,0 +1,82 @@
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/vars";
+
+.button-home {
+  margin-top: 24px;
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 41px;
+  }
+}
+
+.back-button {
+  margin-bottom: 16px;
+}
+
+.page-wrapper {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 81px;
+  }
+}
+
+.colorBtn {
+  padding: 2px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid $elements;
+  transition: border-color 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $white;
+  }
+
+  &__active {
+    border-color: $white;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.capacityBtn {
+  padding: 8px;
+  text-decoration: none;
+  color: $white;
+  font-family: Mont-Regular, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  background-color: $black;
+  border: 1px solid $elements;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $black;
+    background-color: $white;
+    border-color: transparent;
+  }
+
+  &__active {
+    color: $black;
+    background-color: $white;
+    border-color: transparent;
+  }
+}
+
+.capacity__buttons {
+  display: flex;
+  gap: 8px;
+}

@@ -35,7 +35,7 @@ export const ProductCard: FC<Props> = ({
 
       <h2 className="phone__name">
         <Link
-          to={{ pathname: '/phones/apple-iphone-11-pro-max' }}
+          to={{ pathname: `/phones/${phone.phoneId}` }}
           className="phone__name--link"
         >
           {`${phone.name} (iMT9G2FS/A)`}

@@ -47,6 +47,7 @@ export const CatalogPage: React.FC = memo(() => {
   }, [currentPage, perPage, sortBy]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
       setIsFirstLoading(false);
     }, 500);

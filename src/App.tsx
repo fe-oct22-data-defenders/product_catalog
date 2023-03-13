@@ -4,10 +4,10 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CatalogPage } from './modules/CatalogPage/components/CatalogPage';
 import { NotFoundPage } from './modules/NotFoundPage';
-import { HomePage } from './modules/HomePage/components/HomePage';
+import { HomePage } from './modules/HomePage/HomePage';
 import { FavouritesPage } from './modules/FavouritesPage';
 import { CartPage } from './modules/CartPage/components/CartPage';
-import { ProductPage } from './modules/ProductPage/components';
+import { ProductPage } from './modules/ProductPage';
 import './App.scss';
 
 export const App: FC = () => {
@@ -20,7 +20,7 @@ export const App: FC = () => {
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="phones">
             <Route index element={<CatalogPage />} />
-            <Route path="apple-iphone-11-pro-max" element={<ProductPage />} />
+            <Route path=":productId" element={<ProductPage />} />
           </Route>
           <Route path="tablets" element={<NotFoundPage />} />
           <Route path="accessories" element={<NotFoundPage />} />
