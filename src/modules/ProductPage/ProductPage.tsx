@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import React, {
   FC,
   memo,
@@ -15,10 +16,27 @@ import { Phone } from '../../types/Phone';
 import { Loader } from '../../components/Loader/Loader';
 import { Product } from '../../components/Product';
 
-export const ProductPage: FC = memo(() => {
+type Props = {
+  rootPath: string;
+};
+
+export const ProductPage: FC<Props> = memo(({ rootPath }) => {
   const { productId } = useParams<{ productId: string }>();
   const [newestPhones, setNewestPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const categoryName = rootPath.charAt(0).toUpperCase() + rootPath.slice(1);
+  let itemName: string;
+
+  switch (categoryName) {
+  case 'Tablets':
+    itemName = 'Ipad';
+    break;
+
+  default:
+    itemName = 'Iphone';
+    break;
+  }
 
   const loadNewest = useCallback(async () => {
     const newest = await getNewestPhones();
@@ -43,12 +61,12 @@ export const ProductPage: FC = memo(() => {
       {!isLoading && productId && (
         <section className="product-page">
           <div className="button-home">
-            <HomeButtonPlus category="Phones" itemName="Iphone" />
+            <HomeButtonPlus category={categoryName} itemName={itemName} />
           </div>
           <div className="back-button">
             <ButtonBack />
           </div>
-          <Product productId={productId} />
+          <Product productId={productId} rootPath={rootPath} />
           <div className="page-wrapper">
             <SecondSlider
               phones={newestPhones}

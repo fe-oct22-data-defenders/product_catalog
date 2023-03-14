@@ -23,7 +23,7 @@ export const FavouritesPage: React.FC = memo(() => {
           <>
             <p className="favourites-page__subtitle">{`${favorites.length} models`}</p>
             <div className="catalog">
-              <ProductCatalog phones={favorites} />
+              <ProductCatalog phones={favorites} rootPath="phones" />
             </div>
           </>
         )}

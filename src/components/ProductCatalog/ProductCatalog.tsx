@@ -6,10 +6,12 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 type Props = {
   phones: Phone[];
+  rootPath: string,
 };
 
 export const ProductCatalog: React.FC<Props> = ({
   phones,
+  rootPath,
 }) => {
   const [cart, favorites] = useLocalStorage();
 
@@ -26,6 +28,8 @@ export const ProductCatalog: React.FC<Props> = ({
             phone={phone}
             isInCart={isInCart}
             isInFavorites={isInFavorites}
+            key={phone.name}
+            rootPath={rootPath}
           />
         );
       })}

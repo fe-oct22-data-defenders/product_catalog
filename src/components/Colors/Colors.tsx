@@ -8,6 +8,7 @@ type Props = {
   colors: ColorsType,
   color: string,
   id: string,
+  rootPath: string,
 };
 
 export const Colors: FC<Props> = ({
@@ -15,6 +16,7 @@ export const Colors: FC<Props> = ({
   colors,
   color,
   id,
+  rootPath,
 }) => {
   function changeColor(productId: string, newColor: string) {
     const splittedId = productId.split('-');
@@ -48,7 +50,7 @@ export const Colors: FC<Props> = ({
           return (
             <Link
               key={col}
-              to={`/phones/${changeColor(id, col)}`}
+              to={`/${rootPath}/${changeColor(id, col)}`}
               className={cn({
                 colorBtn: true,
                 colorBtn__active: isCurrColor,

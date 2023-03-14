@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 
 type Props = {
   classNameButton: string,
   text: string,
-  onClick: () => void,
+  onClick: (event: SyntheticEvent) => void,
 };
 
 export const ButtonAccent: FC<Props> = ({

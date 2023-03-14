@@ -1,21 +1,14 @@
-/* eslint-disable indent */
-import React, {
-  memo,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-// eslint-disable-next-line max-len
-import { ProductCatalog } from '../../../components/ProductCatalog/ProductCatalog';
-import { Pagination } from './Pagination';
-import './CatalogPage.scss';
-import { Phone } from '../../../types/Phone';
-import { getPhones } from '../../../api/phones';
-import { Loader } from '../../../components/Loader/Loader';
-import { searchByPage } from './helpers/searchByPage';
-import { HomeButton } from '../../../components/HomeButton';
+import { Pagination } from '../CatalogPage/components/Pagination';
+import { getAnotherData } from '../../api/phones';
+import { HomeButton } from '../../components/HomeButton';
+import { Loader } from '../../components/Loader/Loader';
+import { ProductCatalog } from '../../components/ProductCatalog/ProductCatalog';
+import { Phone } from '../../types/Phone';
+import { searchByPage } from '../CatalogPage/components/helpers/searchByPage';
 
-export const CatalogPage: React.FC = memo(() => {
+export const TabletsPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +23,12 @@ export const CatalogPage: React.FC = memo(() => {
     setIsLoading(true);
 
     try {
-      const goods = await getPhones(currentPage, perPage, sortBy);
+      const goods = await getAnotherData(
+        currentPage,
+        perPage,
+        sortBy,
+        'tablets',
+      );
 
       setPhones(goods.data);
       setTotal(goods.total);
@@ -61,9 +59,9 @@ export const CatalogPage: React.FC = memo(() => {
         ) : (
           <>
             <div className="catalog-page__home-button-wrapper">
-              <HomeButton text="Phones" />
+              <HomeButton text="Tablets" />
             </div>
-            <h1 className="catalog-page__title">Mobile phones</h1>
+            <h1 className="catalog-page__title">Tablets</h1>
             <p className="catalog-page__subtitle">{`${total} models`}</p>
             <div className="catalog">
               <div className="grid catalog-selectors">
@@ -136,9 +134,10 @@ export const CatalogPage: React.FC = memo(() => {
                 : (
                   <ProductCatalog
                     phones={phones}
-                    rootPath="phones"
+                    rootPath="tablets"
                   />
                 )}
+
               <Pagination
                 total={total}
                 perPage={perPage}
@@ -150,4 +149,4 @@ export const CatalogPage: React.FC = memo(() => {
       </section>
     </div>
   );
-});
+};

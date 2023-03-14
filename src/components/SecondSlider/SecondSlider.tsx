@@ -112,6 +112,7 @@ export const SecondSlider: FC<Props> = ({ phones, text, sliderClass }) => {
                 isInFavorites={isInFavorites}
                 style={{ height: `${height}px` }}
                 key={phone.id}
+                rootPath="phones"
               />
             </SwiperSlide>
           );
