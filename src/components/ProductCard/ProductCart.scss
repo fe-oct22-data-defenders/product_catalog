@@ -6,8 +6,19 @@ iframe {
   display: flex;
   flex-direction: column;
   padding: 32px;
-  background: $surface1;
+  height: 100%;
   width: 100%;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    background: $surface1;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $icons;
+    }
+  }
 
   &__image {
     display: block;
@@ -25,16 +36,9 @@ iframe {
     font-size: 14px;
     line-height: 21px;
     flex-grow: 1;
-
-    &--link {
-      font-family: Mont-Regular, sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
-      text-decoration: none;
-      color: $white;
-    }
+    font-family: Mont-Regular, sans-serif;
+    font-style: normal;
+    color: $white;
   }
 
   &__price {
@@ -68,6 +72,7 @@ iframe {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+    line-height: 15px;
 
     &--last {
       margin-bottom: 16px ;

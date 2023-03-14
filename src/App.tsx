@@ -9,6 +9,7 @@ import { FavouritesPage } from './modules/FavouritesPage';
 import { CartPage } from './modules/CartPage/components/CartPage';
 import { ProductPage } from './modules/ProductPage';
 import './App.scss';
+import { TabletsPage } from './modules/TabletsPage';
 
 export const App: FC = () => {
   return (
@@ -20,9 +21,18 @@ export const App: FC = () => {
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="phones">
             <Route index element={<CatalogPage />} />
-            <Route path=":productId" element={<ProductPage />} />
+            <Route
+              path=":productId"
+              element={<ProductPage rootPath="phones" />}
+            />
           </Route>
-          <Route path="tablets" element={<NotFoundPage />} />
+          <Route path="tablets">
+            <Route index element={<TabletsPage />} />
+            <Route
+              path=":productId"
+              element={<ProductPage rootPath="tablets" />}
+            />
+          </Route>
           <Route path="accessories" element={<NotFoundPage />} />
           <Route path="favorites" element={<FavouritesPage />} />
           <Route path="card" element={<CartPage />} />

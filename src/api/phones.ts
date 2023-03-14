@@ -17,6 +17,17 @@ export function getPhones(
     .then((res) => res.data);
 }
 
+export function getAnotherData(
+  page: number,
+  perPage: number,
+  sortBy: string,
+  productType: string,
+): Promise<PhonesResponse> {
+  return axios
+    .get(`/products?productType=${productType}&page=${page}&perPage=${perPage}&sortBy=${sortBy}`)
+    .then((res) => res.data);
+}
+
 interface GetOneResult {
   longData: FullPhone,
   shortData: Phone,

@@ -20,9 +20,10 @@ import './Product.scss';
 
 type Props = {
   productId: string,
+  rootPath: string,
 };
 
-export const Product: FC<Props> = ({ productId }) => {
+export const Product: FC<Props> = ({ productId, rootPath }) => {
   const [cart, favourites, setSomething, removeSomething] = useLocalStorage();
   const [product, setProduct] = useState<FullPhone | null>(null);
   const [shortProduct, setShortProduct] = useState<Phone | null>(null);
@@ -61,6 +62,8 @@ export const Product: FC<Props> = ({ productId }) => {
     purple: '#ccb3ff',
     red: '#e63900',
     blue: '#425cde',
+    pink: '#997379',
+    spacegrey: '#4c4c4c',
   };
 
   const handleAddtoCartClick = (where: string) => {
@@ -128,6 +131,7 @@ export const Product: FC<Props> = ({ productId }) => {
                 colors={colors}
                 color={product?.color}
                 id={product?.id}
+                rootPath={rootPath}
               />
               <div className="product__options-capacity">
                 <p className="product__options-capacity-title">
@@ -141,7 +145,7 @@ export const Product: FC<Props> = ({ productId }) => {
                     return (
                       <Link
                         key={cap}
-                        to={`/phones/${changeCapacity(product?.id, cap)}`}
+                        to={`/${rootPath}/${changeCapacity(product?.id, cap)}`}
                         className={cn({
                           capacityBtn: true,
                           capacityBtn__active: isCurrCapacity,

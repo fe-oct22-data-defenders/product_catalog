@@ -22,9 +22,15 @@ export const ButtonFavourite: FC<Props> = ({
         'button-favourite',
         { 'button-favourite--added': isInFavorites },
       )}
-      onClick={isInFavorites
-        ? () => removeFromLocalStorage('favorites', phone?.id, true)
-        : () => addToLocalStorage('favorites', phone)}
+      onClick={(event) => {
+        event.preventDefault();
+
+        if (isInFavorites) {
+          removeFromLocalStorage('favorites', phone?.id, true);
+        } else {
+          addToLocalStorage('favorites', phone);
+        }
+      }}
     />
   );
 };
